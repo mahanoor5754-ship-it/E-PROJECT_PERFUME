@@ -1,0 +1,1086 @@
+/* Custom properties for the gold color */
+:root {
+  --gold-color: #D4AF37;
+}
+
+.gold-text {
+  color: var(--gold-color);
+}
+
+/* --- The Main Change is Here --- */
+.contact-section {
+  /* Humen background image aur dark overlay dono apply karne hain */
+  /* Overlay 'linear-gradient' text aur form ko image ke upar readable rakhta hai */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('images/contact.png'); /* Aapki image ka naam */
+  
+  /* Image pure section ko cover kare */
+  background-size: cover;
+  /* Image center mein rahe */
+  background-position: center;
+  /* (Optional) Section ke sath scroll karne ke liye background fix */
+  background-attachment: fixed;
+  
+  /* Padding aur height adjust karein */
+  padding: 100px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+/* ---------------------------------- */
+
+/* Glass Form Styling (Wohi pehle wala) */
+.glass-form-container {
+  background: rgba(255, 255, 255, 0.05); /* Very transparent white */
+  backdrop-filter: blur(15px); /* Blurs the image behind it */
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(212, 175, 55, 0.74); /* Thin gold border */
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-form-container:hover{
+    box-shadow: 0 0 20px rgb(212, 175, 55); /* Golden glow */
+}
+
+
+/* Input Fields styling to look transparent */
+.glass-input {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: var(--gold-color) !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* Golden Button Styling */
+.btn-gold {
+    background-color: var(--gold-color);
+    color: #fff !important; /* Text hamesha white rahega */
+    border: 1px solid var(--gold-color);
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.4s ease-in-out;
+    text-transform: uppercase;
+}
+
+.btn-gold:hover {
+    background-color: transparent; /* Hover par background khali ho jaye */
+    color: var(--gold-color) !important; /* Text golden ho jaye */
+    border: 1px solid var(--gold-color);
+    /* Golden Glow Effect niche hai */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.4);
+    transform: translateY(-3px); /* Thora sa upar move hoga */
+}
+
+.display-4.fw-bold.gold-text {
+    font-size: 3rem !important; /* Size kafi bara kar diya */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Background se alag dikhne ke liye */
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+
+/* "Send Message" Styling (Inside Glass Form) */
+.glass-form-container h2 {
+    font-size: 2.5rem !important; /* Form ke hisab se bara size */
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Responsiveness (Mobile ke liye size adjust) */
+@media (max-width: 768px) {
+    .display-4.fw-bold.gold-text {
+        font-size: 2.5rem !important;
+    }
+    .glass-form-container h2 {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* navbar */
+
+
+
+:root {
+    --gold: #d4af37;
+    --dark-bg: #0a0a0a;
+    --text-light: #f4f4f4;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+    padding: 20px 0;
+    z-index: 1000;
+    display: flex !important; /* display: none ko hatakar ye add karein */
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #f5e6c8;
+}
+
+.nav-link {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #f5e6c8;
+    
+}
+
+
+/* Navbar ke andar ki img ke liye styling */
+.navbar img {
+  height: 40px; /* Is value ko barha ya kam kar ke apni marzi ka size set karein */
+  width: auto;  /* Aspect ratio barqarar rakhne ke liye */
+  margin-right: 10px; /* Logo aur text (Scentora) ke darmiyan space */
+  vertical-align: middle; /* Text ke saath align karne ke liye */
+}
+
+/* Agar aap text 'Scentora' ko bhi thora bara ya customize karna chahte hain */
+.navbar-brand.logo {
+  font-weight: bold;
+  font-size: 1.5rem; /* Text size */
+  color: #D4AF37 !important; /* Agar black theme hai to Gold color acha lagay ga */
+}
+.custom-dropdown {
+    background-color: #121212 !important; /* Dark Background */
+    border: 1px solid #d4af37 !important; /* Golden Border */
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Dropdown Items (Links) */
+.custom-dropdown .dropdown-item {
+    color: #fff !important;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect on Items */
+.custom-dropdown .dropdown-item:hover {
+    background-color: #1a1a1a !important;
+    color: #d4af37 !important; /* Gold Text on Hover */
+    padding-left: 25px; /* Slight slide effect */
+}
+
+/* Divider Line */
+.dropdown-divider {
+    border-top: 1px solid #333;
+}
+
+/* Dropdown Arrow Color */
+.dropdown-toggle::after {
+    color: #d4af37;
+}
+#icons a i{
+    color:  #f5e6c8;
+    transition: opacity 0.5s ease;
+}
+#icons a i:hover{
+    transform: translateY(-1px);
+}
+.cart-badge-style {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #d4af37; /* Gold color */
+    color: black;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+}
+
+
+/* modal */
+
+.custom-dark-modal {
+    background-color: #121212 !important;
+    border: 1px solid #333;
+    border-radius: 15px;
+    color: white;
+}
+
+.gold-text {
+    color: #d4af37;
+    font-size: 14px;
+}
+
+/* Input Styles */
+.dark-input {
+    background-color: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    color: white !important;
+    padding: 12px;
+}
+
+/* Hover effect on Text Areas/Inputs */
+.dark-input:hover, .dark-input:focus {
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4) !important;
+    outline: none;
+}
+
+/* Sign In Button: Dark with Golden Hover */
+.btn-dark-gold {
+    background-color: #000 !important;
+    color: #d4af37 !important;
+    border: 1px solid #333 !important;
+    padding: 10px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-dark-gold:hover {
+    border-color: #d4af37 !important;
+    background-color: #121212 !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+    
+
+
+.error-text {
+    color: #ff4d4d; /* Red color for error */
+    font-size: 12px;
+    display: none; /* Initially hidden */
+    margin-top: 5px;
+}
+
+/* Jab input invalid ho toh border red ho jaye */
+.is-invalid {
+    border-color: #ff4d4d !important;
+    box-shadow: 0 0 8px rgba(255, 77, 77, 0.3) !important;
+}
+
+
+/* Placeholder color adjust karne ke liye */
+.dark-input::placeholder {
+    color: #666 !important; /* Light gray color */
+    opacity: 1; /* Browser default opacity fix */
+}
+
+/* Firefox ke liye */
+.dark-input:-ms-input-placeholder {
+    color: #666 !important;
+}
+
+/* Internet Explorer ke liye */
+.dark-input::-ms-input-placeholder {
+    color: #666 !important;
+}
+
+/* Agar aap chahte hain ke hover karne par placeholder bhi thoda chamke */
+.dark-input:hover::placeholder {
+    color: #888 !important;
+    transition: 0.3s;
+}
+
+.modal-title{
+  color: #f5e6c8;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+
+}
+
+
+
+.cart-badge-style {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #d4af37; /* Gold color */
+    color: black;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+}
+
+/* Modal Styling (Wohi jo pehle thi) */
+.custom-dark-modal {
+    background-color: #121212 !important;
+    border: 1px solid #d4af37;
+    color: white;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.remove-item {
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 2px 8px;
+}
+
+.remove-item:hover {
+    background-color: #d4af37 !important;
+    color: white !important;
+    border-color: #d4af37 !important;
+    transform: scale(1.1);
+}
+
+
+/* whishlist */
+
+/* Wishlist Badge */
+.wishlist-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #d4af37; /* Red for heart */
+    color: white;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+}
+
+/* Red-Gold Border for Wishlist */
+.border-heart {
+    border: 1px solid #d4af37 !important;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.2);
+}
+
+.wish-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #333;
+}
+
+
+
+
+.heart-btn {
+    /* Aapka existing design yahan rahega */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    border: none; /* Initial border none */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover par golden outline bina blur ke */
+.heart-btn:hover {
+    border: 1px solid #d4af37 !important;
+    transform: scale(1.05);
+    box-shadow: none !important; /* Blur effect remove kar diya */
+}
+
+/* Jab wishlist mein add ho jaye (Optional color change) */
+.heart-btn.active {
+    color: #ff0000;
+}
+
+ /* Social Proof Popup */
+
+
+ .sales-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #111; /* Black background */
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #D4AF37; /* Gold border */
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 9999;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sales-popup.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.popup-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#popup-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    background: #000;
+}
+
+.popup-text p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.popup-text small {
+    color: #D4AF37;
+    font-size: 0.75rem;
+}
+
+
+
+/* footer */
+
+.premium-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 80px 0 30px 0;
+    border-top: 1px solid #333;
+   font-family: 'Poppins', sans-serif;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    color: #D4AF37;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.footer-desc {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-heading {
+    color: #D4AF37;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #D4AF37;
+    padding-left: 5px;
+}
+
+.social-links a {
+    color: #D4AF37;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Newsletter Styles */
+.newsletter-form {
+    display: flex;
+    margin-top: 15px;
+    border-bottom: 1px solid #D4AF37;
+}
+
+.newsletter-form input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+
+.newsletter-form button {
+    background: transparent;
+    border: none;
+    color: #D4AF37;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    text-align: center;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+.footer-bottom a {
+    color: #555;
+    text-decoration: none;
+}
+
+/* Responsive adjust for mobile */
+@media (max-width: 768px) {
+    .premium-footer {
+        padding: 50px 0 20px 0;
+        text-align: center;
+    }
+    .footer-logo, .newsletter-form {
+        justify-content: center;
+    }
+}
+
+/* Footer Social Icons Pulse */
+.social-links a i {
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover i {
+    color: #D4AF37;
+    transform: scale(1.3) rotate(10deg);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+/* animation */
+
+
+/* Floating Animation for Contact Text */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+.contact-info-animate {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Form Input Animation */
+.glass-input {
+    transition: all 0.3s ease-in-out !important;
+}
+.glass-input:focus {
+    transform: translateX(10px);
+    border-color: #d4af37 !important;
+    box-shadow: -5px 0 15px rgba(212, 175, 55, 0.2) !important;
+}
+
+/* Map Section Hover Animation */
+.map-section {
+    filter: grayscale(100%) invert(90%); /* Luxury dark map look */
+    transition: all 0.8s ease;
+    opacity: 0.7;
+}
+
+.map-section:hover {
+    filter: grayscale(0%) invert(0%);
+    opacity: 1;
+}
+
+
+
+
+/* Order Details Modal Luxury Styling */
+#orderDetailsModal .modal-content {
+    background-color: #000000e5 !important; /* Solid Pure Black */
+    border: 2px solid #d4af37; /* Thick Golden Border */
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.15); /* Subtle Golden Glow */
+    border-radius: 12px;
+}
+
+#orderDetailsModal .modal-header {
+    border-bottom: 1px solid #222; /* Very faint line for clean look */
+}
+
+#orderDetailsModal .modal-title {
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1.5px;
+}
+
+
+
+
+
+
+
+
+/* Form Inputs Styling */
+#orderDetailsModal .form-control {
+    background-color: #0a0a0a !important; /* Slightly off-black for inputs */
+    border: 1px solid #333; /* Dark border by default */
+    color: #fff !important;
+    padding: 12px;
+}
+
+/* Focus state - Jab user click kare input pr */
+#orderDetailsModal .form-control:focus {
+    border-color: #d4af37 !important; /* Gold border on focus */
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+    outline: none;
+}
+
+/* Label & Placeholder */
+#orderDetailsModal .form-label {
+    color: #d4af37; /* Labels also in gold */
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+#orderDetailsModal .form-control::placeholder {
+    color: #555;
+}
+
+/* Total Payable Box */
+#orderDetailsModal .p-3.mb-2 {
+    background-color: #0a0a0a !important; 
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+}
+
+#orderDetailsModal .fw-bold {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* Buttons Styling */
+#orderDetailsModal .btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+#orderDetailsModal .btn-outline-light:hover {
+    background: white;
+    color: black;
+}
+
+/* Place Order Button */
+#orderDetailsModal .btn[onclick="placeFinalOrder()"] {
+    background: #d4af37;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s ease;
+}
+
+#orderDetailsModal .btn[onclick="placeFinalOrder()"]:hover {
+    background: #b8860b;
+    transform: scale(1.02);
+}
+/* Cancel Button */
+#orderDetailsModal .btn-outline-light {
+    border-color: #333;
+    color: #888;
+}
+#orderDetailsModal .btn-outline-light:hover {
+    background: #222;
+    color: #fff;
+}
+
+
+
+/* Cart Modal ke Checkout Now button par Golden Glow */
+#mymodal .btn[onclick="openCheckoutModal()"] {
+    transition: all 0.4s ease-in-out;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+#mymodal .btn[onclick="openCheckoutModal()"]:hover {
+    background-color: #f1c40f !important; /* Shining Gold on hover */
+    color: #000 !important;
+    transform: scale(1.05); /* Thora sa size barhayega focus ke liye */
+    
+    /* Strong Golden Glow Effect */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7), 
+                0 0 30px rgba(212, 175, 55, 0.5), 
+                0 0 45px rgba(212, 175, 55, 0.3);
+    
+    letter-spacing: 1px; /* Text thora sa spread hoga luxury look ke liye */
+}
+
+/* Optional: Ek halki si chamak (shimmer) animation bhi add kar sakte hain */
+#mymodal .btn[onclick="openCheckoutModal()"]:active {
+    transform: scale(0.98); /* Click par dabne ka effect */
+}
+
+
+
+/* faqs */
+/* FAQ Section Styles */
+.premium-faq .accordion-item {
+    background-color: transparent !important;
+    border: 1px solid #181717 !important; /* Dark subtle border */
+    border-radius: 5px !important;
+    transition: all 0.4s ease;
+}
+
+.premium-faq .accordion-item:hover {
+    border-color: rgba(212, 175, 55, 0.4) !important;
+}
+
+.premium-faq .accordion-button {
+    background-color: transparent !important;
+    color: white !important;
+    padding: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: none !important;
+    letter-spacing: 0.5px;
+}
+
+/* Arrow color to Gold */
+.premium-faq .accordion-button::after {
+    filter: invert(75%) sepia(35%) saturate(700%) hue-rotate(5deg);
+}
+
+.premium-faq .accordion-button:not(.collapsed) {
+    color: #d4af37 !important; /* Gold text when open */
+}
+
+.premium-faq .accordion-button:not(.collapsed) .gold-num {
+    color: white;
+}
+
+.premium-faq .gold-num {
+    color: #d4af37;
+    font-weight: 700;
+}
+
+.premium-faq .accordion-body {
+    background-color: rgba(7, 7, 7, 0.02); /* Very subtle gold tint */
+    color: #bbb;
+    padding: 0 25px 25px 70px; /* Aligned with text after number */
+    line-height: 1.8;
+}
+
+/* Luxury Border Focus Effect */
+.premium-faq .accordion-item:has(.accordion-button:not(.collapsed)) {
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+
+/* FAQ Contact Button */
+.premium-contact-btn {
+    background: transparent !important;
+    color: #d4af37 !important;
+    border: 1px solid #d4af37 !important;
+    padding: 12px 35px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 2px !important;
+    border-radius: 0 !important; /* Sharp edges look more premium */
+    transition: all 0.4s ease-in-out !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-contact-btn:hover {
+    background: #d4af37 !important;
+    color: #000 !important;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Optional: Subtle animation for the plane icon on hover */
+.premium-contact-btn:hover i {
+    transform: translateX(5px) translateY(-3px);
+    transition: 0.3s;
+}
+
+
+
+/* Checkout Modal Global Styling */
+
+
+#checkoutModal .modal-content {
+    background-color: #020202 !important; /* Deeper black */
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+/* Container Spacing */
+.checkout-container {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* Step Progress Bar */
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+.step-item {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+    position: relative;
+    padding-bottom: 10px;
+}
+.step-item.active {
+    color: #fffffd;
+    border-bottom: 2px solid #d4af37;
+}
+
+/* Input Fields - Sophisticated Look */
+.checkout-input-group {
+    margin-bottom: 25px;
+}
+.checkout-input-group label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.premium-input {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #333 !important;
+    border-radius: 0 !important;
+    color: white !important;
+    padding: 10px 0 !important;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.premium-input:focus {
+    box-shadow: none !important;
+    border-bottom: 1px solid #d4af37 !important;
+}
+
+/* Order Summary Card */
+.summary-card {
+    background: #161616;
+    padding: 30px;
+    border: 1px solid #222;
+    border-radius: 4px;
+}
+.summary-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 1px solid #333;
+}
+
+/* Button */
+.premium-btn {
+    background: #d4af37;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    width: 100%;
+    margin-top: 20px;
+    transition: 0.4s;
+}
+.premium-btn:hover {
+    background: #f2d06b;
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+}
+
+
+
+
+/* Validation Error Style */
+.is-invalid {
+    border-bottom: 1px solid #ff4d4d !important;
+}
+.error-msg {
+    color: #ff4d4d;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Success Overlay */
+.order-success-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #0f0f0f;
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.success-icon {
+    font-size: 60px;
+    color: #d4af37;
+    margin-bottom: 20px;
+    animation: scaleUp 0.5s ease-out;
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+
+/* Checkout Modal Header Styling */
+#checkoutModal .modal-header {
+    background-color: #080808ea !important; /* Rich Dark Black */
+    border-bottom: 1px solid rgba(212, 175, 55, 0.527) !important; /* Subtle Gold Line */
+    padding: 20px 30px;
+}
+
+#checkoutModal .modal-title {
+    color: #d4af37 !important; /* Luxury Gold */
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); /* Soft Gold Glow */
+}
+
+/* Close button (X) ka color white karne ke liye */
+#checkoutModal .btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.8;
+}
+
+/* footer email link */
+email footer .footer-email-contact {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #888; /* Matches footer-desc color */
+}
+
+.footer-email-contact i {
+    color: #D4AF37; /* Golden icon */
+}
+
+.footer-email-contact a {
+    color: #888;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-email-contact a:hover {
+    color: #D4AF37;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
+}
+
+/* Mobile alignment fix */
+@media (max-width: 768px) {
+    .footer-email-contact {
+        justify-content: center;
+    }
+}
+
+/* validation 
+
+/* Real-time Validation Styling */
+.error-msg {
+    color: #ff4d4d;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none; /* Hidden by default */
+    text-align: left;
+}
+
+/* Invalid State: Red Glow */
+.glass-input.is-invalid {
+    border-color: #ff4d4d !important;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.4) !important;
+}
+
+/* Valid State: Golden Glow (Matches your theme) */
+.glass-input.is-valid {
+    border-color: var(--gold-color) !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
+}

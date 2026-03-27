@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E project</title>
+
+
+
+        <!-- css -->
+         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> -->
+      
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- googlefonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+      <!-- bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+      <link rel="stylesheet" href="style.css">
+      <!-- sweetalert -->
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+       <!-- aosanimation -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top transition">
+        <div class="container">
+          <div data-aos="fade-left" data-aos-delay="300">
+          <img src="images/logo1.png" alt="">
+          </div>
+            <a class="navbar-brand logo" href="#">Scentora</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="100"><a class="nav-link active" href="index1.html">Home</a></li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="200"><a class="nav-link" href="about.html">About</a></li>
+                   <li class="nav-item"><a class="nav-link" href="collection.html">Collection</a></li>
+                    <li class="nav-item" data-aos="fade-down" data-aos-delay="400"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+
+
+
+                <!-- icons -->
+
+
+                <div class="nav-icons d-flex align-items-center" id="icons">
+                    <a href="#" class="text-white me-3" style="font-size: 24px;"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      <i class="fa-solid fa-circle-user"></i>
+                    </a>
+                    <a href="#" class="text-white me-3"  data-bs-toggle="modal" data-bs-target="#mymodal" style="font-size: 20px;">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                         
+                    </a>
+                    
+                    <a href="#" class="text-white me-3 position-relative" data-bs-toggle="modal" data-bs-target="#wishlistModal" id="wishlistTrigger">
+                    <i class="fa-solid fa-heart" style="font-size: 20px;"></i>
+                    <span id="wishlist-count" class="wishlist-badge">0</span>
+                    </a>
+            </div>
+        </div>
+    </nav>
+
+
+  
+
+
+  
+
+    <!-- sign in modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1060;">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content border-0" style="background: #000;"> <div class="modal-header border-0 position-absolute end-0 top-0" style="z-index: 1070; padding: 30px;">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body p-0">
+        <div class="container-fluid h-100">
+          <div class="row h-100 g-0">
+            
+            <div class="col-lg-5 d-flex flex-column justify-content-center align-items-center px-5" style="background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);">
+              
+              <div style="max-width: 400px; width: 100%;">
+                <div class="text-center mb-5" data-aos="fade-up">
+                   <h2 style="color: #ffd64d; font-family: 'Playfair Display', serif; letter-spacing: 5px; text-transform: uppercase;">Scentora</h2>
+                   <p class="text-secondary small">Enter the world of premium fragrances</p>
+                </div>
+
+                <div class="mb-4">
+                  <label class="text-light small mb-2" style="letter-spacing: 1px;">EMAIL ADDRESS</label>
+                  <input type="email" class="form-control" id="email" 
+                         style="background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; border-radius: 0; padding: 12px 0;" 
+                         placeholder="name@example.com">
+                </div>
+                
+                <div class="mb-5">
+                  <label class="text-light small mb-2" style="letter-spacing: 1px;">PASSWORD</label>
+                  <input type="password" class="form-control" id="password" 
+                         style="background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; border-radius: 0; padding: 12px 0;" 
+                         placeholder="••••••••">
+                </div>
+
+                <button type="button" class="btn w-100 py-3 mt-3" id="signInBtn" 
+                        style="background: #D4AF37; color: #000; font-weight: bold; letter-spacing: 2px; border-radius: 0; transition: 0.3s;">
+                  SIGN IN
+                </button>
+                
+                <div class="text-center mt-4">
+                  <a href="#" class="small" style="color: #D4AF37; text-decoration: none; opacity: 0.7;">Forgot Password?</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7 d-none d-lg-block" style="position: relative; overflow: hidden;">
+              <div style="
+                background: url('images/signin.png'); 
+                background-size: cover; 
+                background-position: center; 
+                height: 100%; 
+                width: 100%;
+                filter: brightness(0.7);">
+              </div>
+              
+              <div class="position-absolute bottom-0 start-0 p-5 text-white">
+                <h3 style="font-style: italic; font-weight: 300; opacity: 0.9;">"A fragrance is all that's necessary to complete an outfit."</h3>
+                <p style="color: #D4AF37;">— Scentora Collection</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+ <!-- cart modal -->
+
+<div class="modal fade" id="mymodal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content custom-dark-modal bg-dark text-white" style="border: 1px solid #d4af37;">
+      <div class="modal-header border-0">
+        <h1 class="modal-title fs-5" style="color: #d4af37;">Your Luxury Cart</h1>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="cart-items-list">
+            <p class="text-muted text-center">Your cart is empty.</p>
+        </div>
+        <hr style="border-color: #333;">
+        <div class="d-flex justify-content-between fw-bold">
+            <span style="color: #d4af37;">Total:</span>
+            <span style="color: #d4af37;">$<span id="total-price">0</span></span>
+        </div>
+      </div>
+      <div class="modal-footer border-secondary">
+        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" style="color: white;" >Close</button>
+        <button type="button" class="btn" style="background: #d4af37; color: #000;" onclick="openCheckoutModal()" >Checkout Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<!-- wishlist -->                
+
+<div class="modal fade" id="wishlistModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content custom-dark-modal border-heart">
+      <div class="modal-header border-0">
+        <h1 class="modal-title fs-5 text-white"><i class="fa-solid fa-heart me-2 text-danger"></i> My Wishlist</h1>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="wishlist-items-list">
+            <p class="text-muted text-center py-3">Your favorites list is empty.</p>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-dark-gold w-100" data-bs-dismiss="modal">Keep Shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+
+
+
+<!-- Checkout Modal -->
+
+
+
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark text-white border-0" style="position: relative; overflow: hidden;">
+      
+      <div id="order-success" class="order-success-overlay" style="background-color: #000000;">
+          <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h2 style="color: #d4af37; letter-spacing: 5px; font-weight: 700;">ORDER PLACED</h2>
+          <p class="text-white-50 mt-2">Thank you for your purchase. Your luxury essence is on its way.</p>
+          <button class="premium-btn mt-4" style="width: auto; min-width: 200px;" onclick="location.reload()">Back to Shop</button>
+      </div>
+
+      <div class="modal-header border-secondary bg-dark">
+        <h5 class="modal-title" style="color: #d4af37; letter-spacing: 1px;">SECURE CHECKOUT</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="container mt-4 mb-5">
+          <div class="d-flex justify-content-center gap-4 mb-5 text-center">
+            <div id="step-1-label" class="step-item active">01 SHIPPING</div>
+            <div id="step-2-label" class="step-item">02 PAYMENT</div>
+            <div id="step-3-label" class="step-item">03 REVIEW</div>
+          </div>
+
+          <div class="row gx-lg-5">
+            <div class="col-lg-7">
+              <div id="step-1" class="checkout-step">
+                <h4 class="mb-4 text-white">Shipping Details</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="checkout-input-group">
+                      <label>FIRST NAME</label>
+                      <input type="text" id="fname" class="form-control premium-input" placeholder="Enter first name...">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="checkout-input-group">
+                      <label>LAST NAME</label>
+                      <input type="text" id="lname" class="form-control premium-input" placeholder="Enter last name...">
+                    </div>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <div class="checkout-input-group">
+                      <label>EMAIL ADDRESS</label>
+                      <input type="email" id="cemail" class="form-control premium-input" placeholder="e.g. alex@luxury.com">
+                    </div>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <div class="checkout-input-group">
+                      <label>FULL ADDRESS</label>
+                      <textarea id="caddress" class="form-control premium-input" rows="3" placeholder="Street, City, Country..."></textarea>
+                    </div>
+                  </div>
+                </div>
+                <button class="premium-btn w-100 mt-4" onclick="nextStep(2)">
+                  Continue to Payment <i class="fa-solid fa-arrow-right ms-2"></i>
+                </button>
+              </div>
+
+              <div id="step-2" class="checkout-step d-none">
+                <h4 class="mb-4 text-white">Payment Method</h4>
+                <div class="p-3 border border-secondary rounded mb-3 bg-dark hover-gold" style="cursor: pointer;">
+                  <input type="radio" name="pay" id="cod" checked> 
+                  <label for="cod" class="ms-2">Cash on Delivery</label>
+                </div>
+                <div class="p-3 border border-secondary rounded mb-3 opacity-50">
+                  <input type="radio" name="pay" id="card" disabled> 
+                  <label for="card" class="ms-2">Credit / Debit Card (Coming Soon)</label>
+                </div>
+                <div class="d-flex gap-3 mt-4">
+                  <button class="btn btn-outline-secondary w-50 py-3" onclick="nextStep(1)">BACK</button>
+                  <button class="premium-btn w-50" onclick="nextStep(3)">REVIEW ORDER</button>
+                </div>
+              </div>
+
+              <div id="step-3" class="checkout-step d-none">
+                <div class="text-center py-4 border border-secondary rounded bg-dark">
+                  <i class="fa-solid fa-receipt mb-3" style="font-size: 40px; color: #d4af37;"></i>
+                  <h4>Final Review</h4>
+                  <p class="text-muted px-4">Please confirm your items and total on the right before placing the order.</p>
+                </div>
+                <div class="d-flex gap-3 mt-4">
+                  <button class="btn btn-outline-secondary w-50 py-3" onclick="nextStep(2)">BACK</button>
+                  <button class="premium-btn w-50" onclick="placeOrder()">PLACE ORDER NOW</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5 mt-5 mt-lg-0">
+              <div class="summary-card p-4">
+                <h5 class="mb-4" style="color: #d4af37; letter-spacing: 2px;">YOUR ORDER</h5>
+                <div id="checkout-items-list" style="max-height: 400px; overflow-y: auto;">
+                   </div>
+                <hr style="border-color: #333;">
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                  <span class="text-muted">Total Amount</span>
+                  <span style="color: #d4af37; font-size: 24px; font-weight: 700;">$<span id="checkout-total-price">0</span></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+ 
+
+
+    <!-- hero -->
+
+<section class="hero-section d-flex flex-column align-items-center justify-content-center text-center rounded">
+    <div class="background-overlay"></div>
+    
+    <div class="container position-relative" style="z-index: 5; " data-aos="fade-up" data-aos-duration="1500">
+        <h1 class="hero-title">Scentora</h1>
+        
+        <p class="hero-subtitle mb-4 text-white" style="color:#f5e6c8 ;">
+           The Digital Boutique for Premium Fragrances
+        </p>
+        
+        <a href="#" class="btn btn-dark px-4 py-2" id="button" >Explore Collection</a>
+    </div>
+</section>
+
+<!-- headline -->
+
+
+    <div class="announcement-bar">
+    <div class="marquee-content">
+        <span>✨ Free Shipping on Orders Over $50</span>
+        <span>🎁 Buy 1 Get 1 Free on Luxury Collections</span>
+        <span>🚚 Fast Delivery Worldwide</span>
+        <span>💳 Secure Payment Methods</span>
+        <span>✨ Free Shipping on Orders Over $50</span>
+        <span>🎁 Buy 1 Get 1 Free on Luxury Collections</span>
+        <span>🚚 Fast Delivery Worldwide</span>
+        <span>💳 Secure Payment Methods</span>
+    </div>
+</div>
+
+
+
+
+<!-- about perfume -->
+
+
+<section class="about  py-5" style="background: linear-gradient( #000000 );" id="about">
+  <div class="container">
+
+  
+    
+    <div class="row align-items-center">
+     
+      <div class="col-md-6 mb-4 mb-md-0 text-center" data-aos="fade-right">
+        <div class="tilt-container">
+        <img src="images/about1.jpg" alt="About Image" class="img-fluid rounded tilt-img" style="max-width:350px;">
+    </div>
+      </div>
+     
+      <div class="col-md-6 text-center text-md-start" data-aos="fade-left">
+        <p class="text-light" style="font-family: 'Playfair Display', serif; color:#f5e6c8 ;">
+          <h1>The Essence of Pure Luxury</h1>
+          More than just a scent, it’s an identity. We believe that a
+           perfume is the most intense form of memory. Our handcrafted 
+           fragrances are designed for those who appreciate the finer things
+            in life. Click below to explore our heritage and see how we 
+            redefine luxury, one drop at a time.
+        </p>
+        <a href="about.html" class="btn btn-outline-light px-4" >Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- cards -->
+
+<section style="background:linear-gradient( #000000 );" id="about ;">
+<div class="product-card ">
+<div class="contaienr">
+  <div class="row">
+
+
+    <h1 style="font-family:'Playfair Display', serif ; color:#f5e6c8 ;" class="p-5 text-center">Most Loving Scents</h1>
+
+<!-- card1 -->
+
+    <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+  <!-- Top Section (Image & Hot Badge) -->
+   <div class="hover-img" data-bs-toggle="modal" data-bs-target="#m1modal" style="cursor: pointer;">
+    <div class="a-image img-front" style="background-image: url('images/poison1.png');">
+    </div>
+
+     <div class="a-image img-back" style="background-image: url('images/poison2.png');">
+    </div>
+
+</div>
+  <!-- Glassmorphism Info Section -->
+  <div class="card-info">
+    <div class="text-group">
+      <h3>Hypnotic Poison</h3>
+      <p>Caraway, Sambac Jasmine</p>
+    </div>
+    
+    <button class="heart-btn" data-name="N°5 Chanel">❤</button>
+
+  </div>
+
+  <!-- Bottom Buttons -->
+  <div class="card-actions">
+    <button class="buy-now" data-name="N°5 Chanel" data-price="214.55"
+    >Buy Now</button>
+    <div class="price">$135.00</div>
+  </div>
+</div>
+
+
+
+<!-- modal1 -->
+
+ <div class="modal fade" id="m1modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body p-0">
+
+<!-- Wrapper class taakay baaki website kharab na ho -->
+<div class="my-custom-product-page">
+    <div class="product-layout-container">
+        
+        <!-- Side Thumbnails (Left) -->
+    <div class="side-thumbnails">
+            <div class="thumb-box"><img src="images/poison1.png" alt="Side View"></div>
+            <div class="thumb-box"><img src="images/poison2.png" alt="Box View"></div>
+    </div>
+
+        <!-- Main Center Image -->
+    <div class="main-display-image">
+      <div id="m1" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/poison1.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/poison2.png" class="d-block w-100" alt="...">
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#m1" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#m1" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </div>
+        <!-- Right Side Details -->
+        <div class="product-info-panel" style="text-align: center;">
+            <h1 class="p-title">Dior Hypnotic Poison</h1>
+            <h2 class="p-price">$ 135.00</h2>
+            <p class="p-desc">A magnetic and seductive fragrance featuring notes of bitter almond and lush vanilla. It is designed to be a mysterious "forbidden fruit" that leaves a captivating trail....</p>
+
+            <div class="cart-controls">
+                <div class="qty-selector">
+                    <button class="minus-btn">-</button>
+                    <input type="text" class="qty-input" value="1" readonly>
+                    <button class="plus-btn">+</button>
+                </div>
+                   <button type="button" 
+            class="buy-now" 
+            data-name="Gucci Guilty" 
+            data-price="25,500"
+            style="all: unset !important; 
+                   cursor: pointer !important; 
+                   background: linear-gradient(45deg,#ffc041, #fff696, #ffca59 , #fff693, #f3b74f) !important;  
+                   color: #000 !important; 
+                   border-radius: 5px !important; 
+                   font-weight: bold !important; 
+                   font-size: 14px !important; 
+                   display: inline-flex !important;
+                   align-items: center !important;
+                   justify-content: center !important;
+                   text-align: center !important;
+                   /* --- YE DO LINES MAIN HAIN --- */
+                   width: 160px !important;    
+                   height: 45px !important;  
+                   ">
+        ADD TO CART
+    </button>
+            </div>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 30px; top: 30px; z-index: 9999;"></button>
+
+            <div class="extra-links">
+                 <span>⇄</span>
+                 <button onclick="openPriceList('chanelno5.pdf')" class="btn-word-save" id="price-list"> 
+                     View Detail
+                 </button>
+             </div>
+
+            <div class="p-meta">
+                <p><strong>Categories:</strong> Women (Amber/Vanilla)</p>
+ 
+                <div class="social-links">
+    <span class="share-text">share :</span>
+    
+    <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 448 512" width="20" height="20"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM402.4 391c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-135.7 9s-106.2 2.7-135.7-9c-19.7-7.9-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-135.7s-2.7-106.2 9-135.7c7.9-19.7 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 135.7-9s106.2-2.7 135.7 9c19.7 7.9 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 135.7s2.7 106.2-9 135.7z"/></svg>
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 320 512" width="20" height="20"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"/></svg>
+    </a>
+
+    <a href="https://x.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 512 512" width="20" height="20"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+    </a>
+
+    <a href="https://www.pinterest.com/" target="_blank" class="social-icon">
+  <svg viewBox="0 0 496 512" width="20" height="20">
+    <path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 54.6-1.4 71.3-82.7-36.7-140.4-119-140.4-215.1C8 118.9 118.9 8 256 8s248 110.9 248 248z"/>
+  </svg>
+</a>
+ 
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- card2 -->
+
+ <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+  <!-- Top Section (Image & Hot Badge) -->
+   <div class="hover-img" data-bs-toggle="modal" data-bs-target="#m2modal" style="cursor: pointer;">
+    <div class="a-image img-front" style="background-image: url('images/dior1.png');">
+    </div>
+
+     <div class="a-image img-back" style="background-image: url('images/dior2.png');">
+    </div>
+
+</div>
+  <!-- Glassmorphism Info Section -->
+  <div class="card-info">
+    <div class="text-group">
+      <h3>Sauvage Elixir</h3>
+      <p>Nutmeg, Grapefruit, Lavender</p>
+    </div>
+    <button class="heart-btn" data-name="suavage">❤</button>
+  </div>
+
+  <!-- Bottom Buttons -->
+  <div class="card-actions">
+    <button class="buy-now" data-name="suavage" data-price="246.78"
+    >Buy Now</button>
+    <div class="price">$230.00</div>
+  </div>
+</div>
+
+
+
+
+<!-- modal2 -->
+
+<div class="modal fade" id="m2modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body p-0">
+
+<!-- Wrapper class taakay baaki website kharab na ho -->
+<div class="my-custom-product-page">
+    <div class="product-layout-container">
+        
+        <!-- Side Thumbnails (Left) -->
+    <div class="side-thumbnails">
+            <div class="thumb-box"><img src="images/dior1.png" alt="Side View"></div>
+            <div class="thumb-box"><img src="images/dior2.png" alt="Box View"></div>
+    </div>
+
+        <!-- Main Center Image -->
+    <div class="main-display-image">
+      <div id="m2" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/dior1.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/dior2.png" class="d-block w-100" alt="...">
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#m2" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#m2" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </div>
+        <!-- Right Side Details -->
+        <div class="product-info-panel" style="text-align: center;">
+            <h1 class="p-title">Dior Sauvage Elixir</h1>
+            <h2 class="p-price">$ 230.00</h2>
+            <p class="p-desc">An extraordinarily concentrated fragrance that blends the iconic freshness of Sauvage. It is a bold and powerful scent for the modern man....</p>
+
+            <div class="cart-controls">
+                <div class="qty-selector">
+                    <button class="minus-btn">-</button>
+                    <input type="text" class="qty-input" value="1" readonly>
+                    <button class="plus-btn">+</button>
+                </div>
+                  <button type="button" 
+            class="buy-now" 
+            data-name="Gucci Guilty" 
+            data-price="25,500"
+            style="all: unset !important; 
+                   cursor: pointer !important; 
+                   background: linear-gradient(45deg,#ffc041, #fff696, #ffca59 , #fff693, #f3b74f) !important;  
+                   color: #000 !important; 
+                   border-radius: 5px !important; 
+                   font-weight: bold !important; 
+                   font-size: 14px !important; 
+                   display: inline-flex !important;
+                   align-items: center !important;
+                   justify-content: center !important;
+                   text-align: center !important;
+                   /* --- YE DO LINES MAIN HAIN --- */
+                   width: 160px !important;    /* Size yahan fix kar dein */
+                   height: 45px !important;    /* Height bhi fix kar dein */
+                   ">
+        ADD TO CART
+    </button>>
+            </div>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 30px; top: 30px; z-index: 9999;"></button>
+
+            <div class="extra-links">
+                 <span>⇄</span>
+                 <button onclick="openPriceList('DIORSAUVAGE.pdf')" class="btn-word-save" id="price-list"> 
+                     View Detail 
+                 </button>
+             </div>
+
+            <div class="p-meta">
+                <p><strong>Categories:</strong> Men (Aromatic/Spicy)</p>
+ 
+                <div class="social-links">
+    <span class="share-text">share:</span>
+    
+    <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 448 512" width="20" height="20"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM402.4 391c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-135.7 9s-106.2 2.7-135.7-9c-19.7-7.9-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-135.7s-2.7-106.2 9-135.7c7.9-19.7 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 135.7-9s106.2-2.7 135.7 9c19.7 7.9 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 135.7s2.7 106.2-9 135.7z"/></svg>
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 320 512" width="20" height="20"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"/></svg>
+    </a>
+
+    <a href="https://x.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 512 512" width="20" height="20"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+    </a>
+     <a href="https://www.pinterest.com/" target="_blank" class="social-icon">
+  <svg viewBox="0 0 496 512" width="20" height="20">
+    <path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 54.6-1.4 71.3-82.7-36.7-140.4-119-140.4-215.1C8 118.9 118.9 8 256 8s248 110.9 248 248z"/>
+  </svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- card3 -->
+
+
+ <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+  <!-- Top Section (Image & Hot Badge) -->
+   <div class="hover-img" data-bs-toggle="modal" data-bs-target="#m3modal" style="cursor: pointer;">
+    <div class="a-image img-front" style="background-image: url('images/ck1.png');">
+    </div>
+
+     <div class="a-image img-back" style="background-image: url('images/ck2.png');">
+    </div>
+
+</div>
+  <!-- Glassmorphism Info Section -->
+  <div class="card-info">
+    <div class="text-group">
+      <h3>Defy Eau de</h3>
+      <p>Bergamot, Lavender, Vetiver</p>
+    </div>
+    <button class="heart-btn" data-name="CK be">❤</button>
+  </div>
+
+  <!-- Bottom Buttons -->
+  <div class="card-actions">
+    <button class="buy-now" data-name="CK be" data-price="49.69"
+    >Buy Now</button>
+    <div class="price">$163.00</div>
+  </div>
+</div>
+
+
+<!-- modal3 -->
+
+
+<div class="modal fade" id="m3modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body p-0">
+
+<!-- Wrapper class taakay baaki website kharab na ho -->
+<div class="my-custom-product-page">
+    <div class="product-layout-container">
+        
+        <!-- Side Thumbnails (Left) -->
+    <div class="side-thumbnails">
+            <div class="thumb-box"><img src="images/ck1.png" alt="Side View"></div>
+            <div class="thumb-box"><img src="images/ck2.png" alt="Box View"></div>
+    </div>
+
+        <!-- Main Center Image -->
+    <div class="main-display-image">
+      <div id="m3" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/ck1.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/ck2.png" class="d-block w-100" alt="...">
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#m3" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#m3" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </div>
+        <!-- Right Side Details -->
+        <div class="product-info-panel" style="text-align: center;">
+            <h1 class="p-title">Calvin Klein Defy Eau de Toilette</h1>
+            <h2 class="p-price">$ 163.00</h2>
+            <p class="p-desc">Calvin Klein Defy as a woody aromatic fragrance.Its vetiver and amber base creates a smooth masculine scent perfect for casual and formal occasions...</p>
+
+            <div class="cart-controls">
+                <div class="qty-selector">
+                    <button class="minus-btn">-</button>
+                    <input type="text" class="qty-input" value="1" readonly>
+                    <button class="plus-btn">+</button>
+                </div>
+                   <button type="button" 
+            class="buy-now" 
+            data-name="Gucci Guilty" 
+            data-price="25,500"
+            style="all: unset !important; 
+                   cursor: pointer !important; 
+                   background: linear-gradient(45deg,#ffc041, #fff696, #ffca59 , #fff693, #f3b74f) !important;  
+                   color: #000 !important; 
+                   border-radius: 5px !important; 
+                   font-weight: bold !important; 
+                   font-size: 14px !important; 
+                   display: inline-flex !important;
+                   align-items: center !important;
+                   justify-content: center !important;
+                   text-align: center !important;
+                   /* --- YE DO LINES MAIN HAIN --- */
+                   width: 160px !important;    /* Size yahan fix kar dein */
+                   height: 45px !important;    /* Height bhi fix kar dein */
+                   ">
+        ADD TO CART
+    </button>
+            </div>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 30px; top: 30px; z-index: 9999;"></button>
+
+            <div class="extra-links">
+                 <span>⇄</span>
+                 <button onclick="openPriceList('ckbe.pdf')" class="btn-word-save" id="price-list"> 
+                    View Detail 
+                 </button>
+             </div>
+
+            <div class="p-meta">
+                <p><strong>Categories:</strong> Woody Aromatic Fragrance</p>
+ 
+                <div class="social-links">
+    <span class="share-text">share:</span>
+    
+    <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 448 512" width="20" height="20"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM402.4 391c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-135.7 9s-106.2 2.7-135.7-9c-19.7-7.9-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-135.7s-2.7-106.2 9-135.7c7.9-19.7 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 135.7-9s106.2-2.7 135.7 9c19.7 7.9 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 135.7s2.7 106.2-9 135.7z"/></svg>
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 320 512" width="20" height="20"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"/></svg>
+    </a>
+
+    <a href="https://x.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 512 512" width="20" height="20"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+    </a>
+     <a href="https://www.pinterest.com/" target="_blank" class="social-icon">
+  <svg viewBox="0 0 496 512" width="20" height="20">
+    <path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 54.6-1.4 71.3-82.7-36.7-140.4-119-140.4-215.1C8 118.9 118.9 8 256 8s248 110.9 248 248z"/>
+  </svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- card4 -->
+
+
+ <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
+  <!-- Top Section (Image & Hot Badge) -->
+   <div class="hover-img" data-bs-toggle="modal" data-bs-target="#m4modal" style="cursor: pointer;">
+    <div class="a-image img-front" style="background-image: url('images/guilty.jpg');">
+    </div>
+
+     <div class="a-image img-back" style="background-image: url('images/guilty-bg .jpg');">
+    </div>
+
+</div>
+  <!-- Glassmorphism Info Section -->
+  <div class="card-info">
+    <div class="text-group">
+      <h3>Gucci Guilty</h3>
+      <p>lilac, and patchouli</p>
+    </div>
+    <button class="heart-btn" data-name="Gucci Guilty">❤</button>
+  </div>
+
+  <!-- Bottom Buttons -->
+  <div class="card-actions">
+    <button class="buy-now" data-name="Gucci Guilty" data-price="125.36"
+    
+    >Buy Now</button>
+    <div class="price">$125.36</div>
+  </div>
+</div>
+
+
+
+<!-- modal4 -->
+
+
+
+<div class="modal fade" id="m4modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body p-0">
+
+<!-- Wrapper class taakay baaki website kharab na ho -->
+<div class="my-custom-product-page">
+    <div class="product-layout-container">
+        
+        <!-- Side Thumbnails (Left) -->
+    <div class="side-thumbnails">
+            <div class="thumb-box"><img src="images/guilty.jpg" alt="Side View"></div>
+            <div class="thumb-box"><img src="images/Guilty-bg .jpg" alt="Box View"></div>
+    </div>
+
+        <!-- Main Center Image -->
+    <div class="main-display-image">
+      <div id="m4" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/guilty.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/Guilty-bg .jpg" class="d-block w-100" alt="...">
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#m4" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#m4" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </div>
+        <!-- Right Side Details -->
+        <div class="product-info-panel" style="text-align: center;">
+            <h1 class="p-title">Gucci Guilty</h1>
+            <h2 class="p-price">$125.36</h2>
+            <p class="p-desc">A refreshing floral scent with notes of Lilac and Patchouli, designed to celebrate modern romance and freedom...</p>
+
+            <div class="cart-controls">
+                <div class="qty-selector">
+                    <button class="minus-btn">-</button>
+                    <input type="text" class="qty-input" value="1" readonly>
+                    <button class="plus-btn">+</button>
+                </div>
+                   <button type="button" 
+            class="buy-now" 
+            data-name="Gucci Guilty" 
+            data-price="25,500"
+            style="all: unset !important; 
+                   cursor: pointer !important; 
+                   background: linear-gradient(45deg,#ffc041, #fff696, #ffca59 , #fff693, #f3b74f) !important;  
+                   color: #000 !important; 
+                   border-radius: 5px !important; 
+                   font-weight: bold !important; 
+                   font-size: 14px !important; 
+                   display: inline-flex !important;
+                   align-items: center !important;
+                   justify-content: center !important;
+                   text-align: center !important;
+                   /* --- YE DO LINES MAIN HAIN --- */
+                   width: 160px !important;    /* Size yahan fix kar dein */
+                   height: 45px !important;    /* Height bhi fix kar dein */
+                   ">
+        ADD TO CART
+    </button>
+    </div>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 30px; top: 30px; z-index: 9999;"></button>
+
+            <div class="extra-links">
+                 <span>⇄</span>
+                 <button onclick="openPriceList('gucciguilty.pdf')" class="btn-word-save" id="price-list"> 
+                     View Detail
+                 </button>
+             </div>
+
+            <div class="p-meta">
+                <p><strong>Categories:</strong> Woody / Aromatic</p>
+ 
+                <div class="social-links">
+    <span class="share-text">share:</span>
+    
+    <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 448 512" width="20" height="20"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM402.4 391c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-135.7 9s-106.2 2.7-135.7-9c-19.7-7.9-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-135.7s-2.7-106.2 9-135.7c7.9-19.7 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 135.7-9s106.2-2.7 135.7 9c19.7 7.9 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 135.7s2.7 106.2-9 135.7z"/></svg>
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 320 512" width="20" height="20"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"/></svg>
+    </a>
+
+    <a href="https://x.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 512 512" width="20" height="20"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+    </a>
+     <a href="https://www.pinterest.com/" target="_blank" class="social-icon">
+  <svg viewBox="0 0 496 512" width="20" height="20">
+    <path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 54.6-1.4 71.3-82.7-36.7-140.4-119-140.4-215.1C8 118.9 118.9 8 256 8s248 110.9 248 248z"/>
+  </svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- categoires -->
+
+
+
+
+<div class="container my-5">
+    <div class="row g-4">
+      <h1 class="text-center p-4" style="font-family: 'Playfair Display', serif; color:#f5e6c8 ;">Collection</h1>
+
+      
+        <div class="col-6 col-md-4" data-aos="flip-left" data-aos-delay="100">
+            <div class="brand-card tilt-img" style="background-image: url('images/chanel-bg.jpg');">
+                <div class="glass-content text-center">
+                    <h2 class="brand-name">CHANEL</h2>
+                    <p class="brand-tagline">EXPLORE ALL FRAGRANCES</p>
+                    <a href="collection.html#chanelradio" class="btn-luxury">Explore Collection</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4" data-aos="flip-left" data-aos-delay="100">
+            <div class="brand-card tilt-img" style="background-image: url('images/dior-bg.jpg');">
+                <div class="glass-content text-center">
+                    <h2 class="brand-name">DIOR</h2>
+                    <p class="brand-tagline">DISCOVER THE COLLECTION</p>
+                    <a href="collection.html#diorradio" class="btn-luxury">Explore Collection</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4" data-aos="flip-left" data-aos-delay="100">
+            <div class="brand-card tilt-img" style="background-image: url('images/ck-bg.jpg');">
+                <div class="glass-content text-center">
+                    <h2 class="brand-name">CALVIN KLEIN</h2>
+                    <p class="brand-tagline">EXPLORE MODERN SCENTS</p>
+                    <a href="collection.html#ckradio" class="btn-luxury">Explore Collection</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4" data-aos="flip-left" data-aos-delay="100">
+            <div class="brand-card tilt-img" style="background-image: url('images/victoria-bg.jpg');">
+                <div class="glass-content text-center">
+                    <h2 class="brand-name">VICTORIA</h2>
+                    <p class="brand-tagline">PURE SEDUCTION</p>
+                    <a href="collection.html#victoriaradio" class="btn-luxury">Explore Collection</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4" data-aos="flip-left" data-aos-delay="100">
+            <div class="brand-card tilt-img" style="background-image: url('images/celine-bg.jpg');">
+                <div class="glass-content text-center">
+                    <h2 class="brand-name">CELINE</h2>
+                    <p class="brand-tagline">HAUTE PARFUMERIE</p>
+                    <a href="collection.html#celineradio" class="btn-luxury">Explore Collection</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4" data-aos="flip-left" data-aos-delay="100">
+            <div class="brand-card tilt-img" style="background-image: url('images/gucci-bg.jpg');">
+                <div class="glass-content text-center">
+                    <h2 class="brand-name">GUCCI</h2>
+                    <p class="brand-tagline">GUCCI BLOOM SERIES</p>
+                    <a href="collection.html#gucciradio" class="btn-luxury">Explore Collection</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- new arivals -->
+
+
+
+<section style="background:linear-gradient( #000000 );" id="about ;">
+<div class="product-card ">
+<div class="contaienr">
+  <div class="row">
+    <h1 style="font-family:'Playfair Display', serif ; color:#f5e6c8 ;" class="p-5 text-center">Fresh Releases</h1>
+
+
+<!-- card5 -->
+
+    <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+  <!-- Top Section (Image & Hot Badge) -->
+   <div class="hover-img" data-bs-toggle="modal" data-bs-target="#m5modal" style="cursor: pointer;">
+    <div class="a-image img-front" style="background-image: url('images/pink1.png');">
+    </div>
+
+     <div class="a-image img-back" style="background-image: url('images/pink2.png');">
+    </div>
+
+</div>
+  <!-- Glassmorphism Info Section -->
+  <div class="card-info">
+    <div class="text-group">
+      <h3>Chance Eau Vive</h3>
+      <p>Blood, jasmine, cedar-iris</p>
+    </div>
+    
+    <button class="heart-btn" data-name="Chanel Chance">❤</button>
+
+  </div>
+
+  <!-- Bottom Buttons -->
+  <div class="card-actions">
+    <button class="buy-now" data-name="Chanel Chance" data-price="214.90"
+    
+    >Buy Now</button>
+    <div class="price">$ 135.36</div>
+  </div>
+</div>
+
+
+
+<!-- modal5 -->
+
+
+
+<div class="modal fade" id="m5modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body p-0">
+
+<!-- Wrapper class taakay baaki website kharab na ho -->
+<div class="my-custom-product-page">
+    <div class="product-layout-container">
+        
+        <!-- Side Thumbnails (Left) -->
+    <div class="side-thumbnails">
+            <div class="thumb-box"><img src="images/pink1.png" alt="Side View"></div>
+            <div class="thumb-box"><img src="images/pink2.png" alt="Box View"></div>
+    </div>
+
+        <!-- Main Center Image -->
+    <div class="main-display-image">
+      <div id="m5" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/pink1.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/pink2.png" class="d-block w-100" alt="...">
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#m5" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#m5" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </div>
+        <!-- Right Side Details -->
+        <div class="product-info-panel" style="text-align: center;">
+            <h1 class="p-title">NextChanel Chance Eau Tendre</h1>
+            <h2 class="p-price">$ 135.36</h2>
+            <p class="p-desc">A delicate and radiant blend of Jasmine and Rose that feels soft, fruity, and romantic. It is widely loved for its elegant trail and versatility for any occasion...</p>
+
+            <div class="cart-controls">
+                <div class="qty-selector">
+                    <button class="minus-btn">-</button>
+                    <input type="text" class="qty-input" value="1" readonly>
+                    <button class="plus-btn">+</button>
+                </div>
+                        <button type="button" 
+            class="buy-now" 
+            data-name="Gucci Guilty" 
+            data-price="25,500"
+            style="all: unset !important; 
+                   cursor: pointer !important; 
+                   background: linear-gradient(45deg,#ffc041, #fff696, #ffca59 , #fff693, #f3b74f) !important;  
+                   color: #000 !important; 
+                   border-radius: 5px !important; 
+                   font-weight: bold !important; 
+                   font-size: 14px !important; 
+                   display: inline-flex !important;
+                   align-items: center !important;
+                   justify-content: center !important;
+                   text-align: center !important;
+                   /* --- YE DO LINES MAIN HAIN --- */
+                   width: 160px !important;    /* Size yahan fix kar dein */
+                   height: 45px !important;    /* Height bhi fix kar dein */
+                   ">
+        ADD TO CART
+    </button>
+            </div>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 30px; top: 30px; z-index: 9999;"></button>
+
+            <div class="extra-links">
+                 <span>⇄</span>
+                 <button onclick="openPriceList('chanelchance.pdf')" class="btn-word-save" id="price-list"> 
+                     View Detail 
+                 </button>
+             </div>
+
+            <div class="p-meta">
+                <p><strong>Categories:</strong> Unisex / Floral Fruity</p>
+ 
+                <div class="social-links">
+    <span class="share-text">share:</span>
+    
+    <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 448 512" width="20" height="20"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM402.4 391c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-135.7 9s-106.2 2.7-135.7-9c-19.7-7.9-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-135.7s-2.7-106.2 9-135.7c7.9-19.7 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 135.7-9s106.2-2.7 135.7 9c19.7 7.9 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 135.7s2.7 106.2-9 135.7z"/></svg>
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 320 512" width="20" height="20"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"/></svg>
+    </a>
+
+    <a href="https://x.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 512 512" width="20" height="20"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+    </a>
+     <a href="https://www.pinterest.com/" target="_blank" class="social-icon">
+  <svg viewBox="0 0 496 512" width="20" height="20">
+    <path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 54.6-1.4 71.3-82.7-36.7-140.4-119-140.4-215.1C8 118.9 118.9 8 256 8s248 110.9 248 248z"/>
+  </svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<!-- card6 -->
+
+
+ <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+  <!-- Top Section (Image & Hot Badge) -->
+   <div class="hover-img" data-bs-toggle="modal" data-bs-target="#m6modal" style="cursor: pointer;">
+    <div class="a-image img-front" style="background-image: url('images/miss\ dior.jpg');">
+    </div>
+
+     <div class="a-image img-back" style="background-image: url('images/miss\ dior-bg.jpg');">
+    </div>
+
+</div>
+  <!-- Glassmorphism Info Section -->
+  <div class="card-info">
+    <div class="text-group">
+      <h3>Miss Dior</h3>
+      <p>Centifolia rose, lily-of-the-valley</p>
+    </div>
+    <button class="heart-btn" data-name="Miss Dior">❤</button>
+  </div>
+
+  <!-- Bottom Buttons -->
+  <div class="card-actions">
+    <button class="buy-now" data-name="Miss Dior" data-price="229.23"
+    
+    >Buy Now</button>
+    <div class="price">$160.00</div>
+  </div>
+</div>
+
+
+<!-- modal6 -->
+
+
+
+<div class="modal fade" id="m6modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body p-0">
+
+<!-- Wrapper class taakay baaki website kharab na ho -->
+<div class="my-custom-product-page">
+    <div class="product-layout-container">
+        
+        <!-- Side Thumbnails (Left) -->
+    <div class="side-thumbnails">
+            <div class="thumb-box"><img src="images/miss dior.jpg" alt="Side View"></div>
+            <div class="thumb-box"><img src="images/miss dior-bg.jpg" alt="Box View"></div>
+    </div>
+
+        <!-- Main Center Image -->
+    <div class="main-display-image">
+      <div id="m6" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/miss dior.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/miss dior-bg.jpg" class="d-block w-100" alt="...">
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#m6" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#m6" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </div>
+        <!-- Right Side Details -->
+        <div class="product-info-panel" style="text-align: center;">
+            <h1 class="p-title">Miss Dior Blooming Bouquet</h1>
+            <h2 class="p-price">$ 160.00</h2>
+            <p class="p-desc">A fresh and sparkling floral bouquet featuring peony and Damask rose, balanced by white musks. It is a light and romantic scent ...</p>
+
+            <div class="cart-controls">
+                <div class="qty-selector">
+                    <button class="minus-btn">-</button>
+                    <input type="text" class="qty-input" value="1" readonly>
+                    <button class="plus-btn">+</button>
+                </div>
+                        <button type="button" 
+            class="buy-now" 
+            data-name="Gucci Guilty" 
+            data-price="25,500"
+            style="all: unset !important; 
+                   cursor: pointer !important; 
+                   background: linear-gradient(45deg,#ffc041, #fff696, #ffca59 , #fff693, #f3b74f) !important;  
+                   color: #000 !important; 
+                   border-radius: 5px !important; 
+                   font-weight: bold !important; 
+                   font-size: 14px !important; 
+                   display: inline-flex !important;
+                   align-items: center !important;
+                   justify-content: center !important;
+                   text-align: center !important;
+                   /* --- YE DO LINES MAIN HAIN --- */
+                   width: 160px !important;    /* Size yahan fix kar dein */
+                   height: 45px !important;    /* Height bhi fix kar dein */
+                   ">
+        ADD TO CART
+    </button>
+            </div>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 30px; top: 30px; z-index: 9999;"></button>
+
+            <div class="extra-links">
+                 <span>⇄</span>
+                 <button onclick="openPriceList('missdior.pdf')" class="btn-word-save" id="price-list"> 
+                     View Detail 
+                 </button>
+             </div>
+
+            <div class="p-meta">
+                <p><strong>Categories:</strong> Women (Floral)</p>
+ 
+                <div class="social-links">
+    <span class="share-text">share:</span>
+    
+    <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 448 512" width="20" height="20"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM402.4 391c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-135.7 9s-106.2 2.7-135.7-9c-19.7-7.9-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-135.7s-2.7-106.2 9-135.7c7.9-19.7 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 135.7-9s106.2-2.7 135.7 9c19.7 7.9 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 135.7s2.7 106.2-9 135.7z"/></svg>
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 320 512" width="20" height="20"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"/></svg>
+    </a>
+
+    <a href="https://x.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 512 512" width="20" height="20"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+    </a>
+
+     <a href="https://www.pinterest.com/" target="_blank" class="social-icon">
+  <svg viewBox="0 0 496 512" width="20" height="20">
+    <path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 54.6-1.4 71.3-82.7-36.7-140.4-119-140.4-215.1C8 118.9 118.9 8 256 8s248 110.9 248 248z"/>
+  </svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- card7 -->
+
+ <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+  <!-- Top Section (Image & Hot Badge) -->
+   <div class="hover-img" data-bs-toggle="modal" data-bs-target="#m7modal" style="cursor: pointer;">
+    <div class="a-image img-front" style="background-image: url('images/victoria1.png');">
+    </div>
+
+     <div class="a-image img-back" style="background-image: url('images/victoria2.png');">
+    </div>
+
+</div>
+  <!-- Glassmorphism Info Section -->
+  <div class="card-info">
+    <div class="text-group">
+      <h3>Bare Eau de</h3>
+      <p>Sueded, Mandarin Madagascar</p>
+    </div>
+    <button class="heart-btn" data-name="Victoria's Secret Bombshell">❤</button>
+  </div>
+
+  <!-- Bottom Buttons -->
+  <div class="card-actions">
+    <button class="buy-now" data-name="Victoria's Secret Bombshell" data-price="139.69"
+   
+    >Buy Now</button>
+    <div class="price">$110.00</div>
+  </div>
+</div>
+
+
+
+<!-- modal7 -->
+
+
+
+<div class="modal fade" id="m7modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body p-0">
+
+<!-- Wrapper class taakay baaki website kharab na ho -->
+<div class="my-custom-product-page">
+    <div class="product-layout-container">
+        
+        <!-- Side Thumbnails (Left) -->
+    <div class="side-thumbnails">
+            <div class="thumb-box"><img src="images/victoria1.png" alt="Side View"></div>
+            <div class="thumb-box"><img src="images/victoria2.png" alt="Box View"></div>
+    </div>
+
+        <!-- Main Center Image -->
+    <div class="main-display-image">
+      <div id="m7" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/victoria1.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/victoria2.png" class="d-block w-100" alt="...">
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#m7" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#m7" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </div>
+        <!-- Right Side Details -->
+        <div class="product-info-panel" style="text-align: center;">
+            <h1 class="p-title">Victoria's Secret Bare Eau de Parfum</h1>
+            <h2 class="p-price">$ 110.00</h2>
+            <p class="p-desc">A soft and elegant fragrance with warm vanilla and creamy musky notes.Perfect for daily wear, giving a natural and feminine scent...</p>
+
+            <div class="cart-controls">
+                <div class="qty-selector">
+                    <button class="minus-btn">-</button>
+                    <input type="text" class="qty-input" value="1" readonly>
+                    <button class="plus-btn">+</button>
+                </div>
+                        <button type="button" 
+            class="buy-now" 
+            data-name="Gucci Guilty" 
+            data-price="25,500"
+            style="all: unset !important; 
+                   cursor: pointer !important; 
+                   background: linear-gradient(45deg,#ffc041, #fff696, #ffca59 , #fff693, #f3b74f) !important;  
+                   color: #000 !important; 
+                   border-radius: 5px !important; 
+                   font-weight: bold !important; 
+                   font-size: 14px !important; 
+                   display: inline-flex !important;
+                   align-items: center !important;
+                   justify-content: center !important;
+                   text-align: center !important;
+                   /* --- YE DO LINES MAIN HAIN --- */
+                   width: 160px !important;    /* Size yahan fix kar dein */
+                   height: 45px !important;    /* Height bhi fix kar dein */
+                   ">
+        ADD TO CART
+    </button>
+            </div>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 30px; top: 30px; z-index: 9999;"></button>
+
+            <div class="extra-links">
+                 <span>⇄</span>
+                 <button onclick="openPriceList('bombshell.pdf')" class="btn-word-save" id="price-list"> 
+                     View Detail 
+                 </button>
+             </div>
+
+            <div class="p-meta">
+                <p><strong>Categories:</strong> Women – Warm Vanilla / Gourmand Fragrance</p>
+ 
+                <div class="social-links">
+    <span class="share-text">share:</span>
+    
+    <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 448 512" width="20" height="20"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM402.4 391c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-135.7 9s-106.2 2.7-135.7-9c-19.7-7.9-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-135.7s-2.7-106.2 9-135.7c7.9-19.7 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 135.7-9s106.2-2.7 135.7 9c19.7 7.9 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 135.7s2.7 106.2-9 135.7z"/></svg>
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 320 512" width="20" height="20"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"/></svg>
+    </a>
+
+    <a href="https://x.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 512 512" width="20" height="20"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+    </a>
+     <a href="https://www.pinterest.com/" target="_blank" class="social-icon">
+  <svg viewBox="0 0 496 512" width="20" height="20">
+    <path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 54.6-1.4 71.3-82.7-36.7-140.4-119-140.4-215.1C8 118.9 118.9 8 256 8s248 110.9 248 248z"/>
+  </svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- card8 -->
+
+
+ <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
+  <!-- Top Section (Image & Hot Badge) -->
+   <div class="hover-img" data-bs-toggle="modal" data-bs-target="#m8modal" style="cursor: pointer;">
+    <div class="a-image img-front" style="background-image: url('images/de1.png');">
+    </div>
+
+     <div class="a-image img-back" style="background-image: url('images/de2.png');">
+    </div>
+
+</div>
+  <!-- Glassmorphism Info Section -->
+  <div class="card-info">
+    <div class="text-group">
+      <h3>Bleu de</h3>
+      <p>Cedar, Amberwood, Mint</p>
+    </div>
+    <button class="heart-btn" data-name="Bleu de Chanel">❤</button>
+  </div>
+
+  <!-- Bottom Buttons -->
+  <div class="card-actions">
+    <button class="buy-now" data-name="Bleu de Chanel" data-price="257.89"
+    >Buy Now</button>
+    <div class="price">$190.00</div>
+  </div>
+</div>
+
+
+
+<!-- modal8 -->
+
+
+<div class="modal fade" id="m8modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content" style="background: transparent; border: none;">
+      <div class="modal-body p-0">
+
+<!-- Wrapper class taakay baaki website kharab na ho -->
+<div class="my-custom-product-page">
+    <div class="product-layout-container">
+        
+        <!-- Side Thumbnails (Left) -->
+    <div class="side-thumbnails">
+            <div class="thumb-box"><img src="images/de1.png" alt="Side View"></div>
+            <div class="thumb-box"><img src="images/de2.png" alt="Box View"></div>
+    </div>
+
+        <!-- Main Center Image -->
+    <div class="main-display-image">
+      <div id="m8" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/de1.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/de2.png" class="d-block w-100" alt="...">
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#m8" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#m8" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </div>
+        <!-- Right Side Details -->
+        <div class="product-info-panel" style="text-align: center;">
+            <h1 class="p-title">Bleu de Chanel Parfum</h1>
+            <h2 class="p-price">$ 190.00</h2>
+            <p class="p-desc">A powerful and sophisticated fragrance for the man who defies convention. It offers a dense, woody trail with notes of sandalwood and cedar.....</p>
+
+            <div class="cart-controls">
+                <div class="qty-selector">
+                    <button class="minus-btn">-</button>
+                    <input type="text" class="qty-input" value="1" readonly>
+                    <button class="plus-btn">+</button>
+                </div>
+                       <button type="button" 
+            class="buy-now" 
+            data-name="Gucci Guilty" 
+            data-price="25,500"
+            style="all: unset !important; 
+                   cursor: pointer !important; 
+                   background: linear-gradient(45deg,#ffc041, #fff696, #ffca59 , #fff693, #f3b74f) !important;  
+                   color: #000 !important; 
+                   border-radius: 5px !important; 
+                   font-weight: bold !important; 
+                   font-size: 14px !important; 
+                   display: inline-flex !important;
+                   align-items: center !important;
+                   justify-content: center !important;
+                   text-align: center !important;
+                   /* --- YE DO LINES MAIN HAIN --- */
+                   width: 160px !important;    /* Size yahan fix kar dein */
+                   height: 45px !important;    /* Height bhi fix kar dein */
+                   ">
+        ADD TO CART
+    </button>
+            </div>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; right: 30px; top: 30px; z-index: 9999;"></button>
+
+            <div class="extra-links">
+                 <span>⇄</span>
+                 <button onclick="openPriceList('BleudeChanel.pdf')" class="btn-word-save" id="price-list"> 
+                    View Detail 
+                 </button>
+             </div>
+
+            <div class="p-meta">
+                <p><strong>Categories:</strong> Men (Woody Aromatic)</p>
+ 
+                <div class="social-links">
+    <span class="share-text">share:</span>
+    
+    <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 448 512" width="20" height="20"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM402.4 391c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-135.7 9s-106.2 2.7-135.7-9c-19.7-7.9-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-135.7s-2.7-106.2 9-135.7c7.9-19.7 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 135.7-9s106.2-2.7 135.7 9c19.7 7.9 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 135.7s2.7 106.2-9 135.7z"/></svg>
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 320 512" width="20" height="20"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"/></svg>
+    </a>
+
+    <a href="https://x.com/" target="_blank" class="social-icon">
+        <svg viewBox="0 0 512 512" width="20" height="20"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+    </a>
+     <a href="https://www.pinterest.com/" target="_blank" class="social-icon">
+  <svg viewBox="0 0 496 512" width="20" height="20">
+    <path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 54.6-1.4 71.3-82.7-36.7-140.4-119-140.4-215.1C8 118.9 118.9 8 256 8s248 110.9 248 248z"/>
+  </svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+<!-- make perfume bottel memory -->
+
+
+<section class="product-about py-5 text-light" style="background-color: #000000;">
+  <div class="container">
+    <h1 class="text-center mb-5 fw-bold">Engrave Your Scent Story</h1>
+    
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6 text-center" data-aos="fade-right">
+        <img src="images/memory.jpg" alt="About Image" class="img-fluid rounded tilt-img" style="max-height: 500px; width: 90%; object-fit: cover;">
+      </div>
+      
+      <div class="col-lg-6 text-center text-lg-start" data-aos="fade-left">
+        <h3 class="mb-3 ">Make The Memory Last: Engrave Your Scent Story</h3>
+        <p class="lead-sm opacity-75">
+          A fragrance is a fleeting mist, but an engraving anchors it in 
+          time. By etching a name, a date, or a secret into the glass, 
+          you transform a luxury bottle into a personal landmark. It shifts
+          the narrative from a simple purchase to a physical chapter of 
+          your life, turning a scent into a permanent title for your most 
+          cherished moments.
+        </p>
+        <p class="opacity-75">
+          Scent is the ultimate trigger for nostalgia, transporting you 
+          through time in a single breath. By pairing that emotional power
+          with a custom engraving, you create a sensory heirloom—a physical monument to a specific moment in your life.
+        </p>
+        
+        <div class="mt-4 d-flex justify-content-center justify-content-lg-start gap-3">
+          <img src="images/memory1.png" alt="Detail 1" class="img-fluid rounded" style="max-width: 120px;">
+          <img src="images/memory2.jpg" alt="Detail 2" class="img-fluid rounded " style="max-width: 120px;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- review -->
+
+
+<div class="testimonial-slider" data-aos="fade-up">
+    
+  <h1 class="text-center pt-5" style="font-family:'Playfair Display', serif; color: #f5e6c8;">Let customers speak for us</h1> 
+  <h3 class="text-center" style="color: #d4af37;">★★★★★</h3>
+  <h3 class="text-center pb-5">from 9245 reviews</h3>
+  
+
+  <div class="scroll-track">
+
+  
+
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p>"I bought it as a last minute gift... amazing delivery services!"</p>
+      <span class="author">Sarah Khan</span>
+       
+      <div class="perfume-img-wrapper">
+  
+  </div>
+
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p><strong>I am in love with this scent.</strong> This is my third time ordering!</p>
+      <span class="author">- M.R.</span>
+       
+      <div class="perfume-img-wrapper">
+
+  </div>
+
+
+
+    </div>
+    <div class="card">
+      <div class="stars">★★★★★</div>
+      <p>Amazing experience with you. I just love your fragrance! 😍</p>
+      <span class="author">- Haris.</span>
+
+      <div class="perfume-img-wrapper">
+
+  </div>
+
+
+    </div>
+
+    <div class="card"><div class="stars">★★★★★</div>
+      <p>I am in love with this scent.</strong> This is my third time ordering!</p>
+      <span class="author">- Noah.j</span>
+    
+    <div class="perfume-img-wrapper">
+    
+  </div>
+    
+    </div>
+
+
+    <div class="card"><div class="stars">★★★★★</div>
+      <p>Amazing experience with you. I just love your fragrance! 😍</p>
+      <span class="author">- H.S.A.</span>
+    
+    <div class="perfume-img-wrapper">
+
+  </div>
+    
+    </div>
+
+
+    <div class="card"><div class="stars">★★★★★</div>
+      <p>"I bought it as a last minute gift... amazing delivery services!" 😍</p>
+      <span class="author">- Marco.</span>
+    
+    <div class="perfume-img-wrapper">
+  
+  </div>
+    
+    </div>
+
+
+    
+    <div class="card"><div class="stars">★★★★★</div>
+      <p>Amazing experience with you. I just love your fragrance! 😍</p>
+      <span class="author">- Louis</span>
+    
+    <div class="perfume-img-wrapper">
+
+  </div>
+    
+    </div>
+
+
+
+    
+    <div class="card"><div class="stars">★★★★★</div>
+      <p>"I bought it as a last minute gift... amazing delivery services!" 😍</p>
+      <span class="author">- Sara</span>
+    
+    <div class="perfume-img-wrapper">
+
+  </div>
+    
+    </div>
+
+    <div class="card"><div class="stars">★★★★★</div>
+      <p>Amazing experience with you. I just love your fragrance! 😍</p>
+      <span class="author">- Ahmed</span>
+    
+    <div class="perfume-img-wrapper">
+  
+  </div>
+    
+    </div>
+
+
+
+
+  </div>
+</div>
+
+<!-- counter -->
+
+<section class="counter-section">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-offset="100">
+                <div class="counter-card">
+                    <i class="fa-solid fa-users-line counter-icon"></i>
+                    <h2 class="counter-value" data-target="10000">0</h2>
+                    <p class="counter-text">Happy Clients</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-offset="200">
+                <div class="counter-card">
+                    <i class="fa-solid fa-bottle-droplet counter-icon"></i>
+                    <h2 class="counter-value" data-target="150">0</h2>
+                    <p class="counter-text">Luxury Scents</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-offset="300">
+                <div class="counter-card">
+                    <i class="fa-solid fa-shop counter-icon"></i>
+                    <h2 class="counter-value" data-target="25">0</h2>
+                    <p class="counter-text">Global Outlets</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-offset="400">
+                <div class="counter-card">
+                    <i class="fa-solid fa-award counter-icon"></i>
+                    <h2 class="counter-value" data-target="12">0</h2>
+                    <p class="counter-text">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Social Proof Popup -->
+
+
+<div id="sales-notification" class="sales-popup hidden">
+    <div class="popup-content">
+        <img id="popup-img" src="images/logo.png" alt="Perfume">
+        <div class="popup-text">
+            <p id="popup-msg"></p>
+            <small id="popup-time"></small>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- footer -->
+
+
+<footer class="premium-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="footer-logo">
+                    <img src="images/logo1.png" alt="Scentora" class="footer-logo-img">
+                    <span class="brand-name">SCENTORA</span>
+                </div>
+                <p class="footer-desc">Crafting timeless scents that linger in memory. Redefining luxury, one drop at a time.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram" style="color: #D4AF37;"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f" style="color: #D4AF37;"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter" style="color: #D4AF37;"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="collection.html">Collection</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="footer-heading">Collections</h5>
+                     <ul class="footer-links">
+                    <li><a href="collection.html#chanelradio">CHANEL</a></li>
+                    <li><a href="collection.html#diorradio">DIOR</a></li>
+                    <li><a href="collection.html#calvinradio">CALVIN KLEIN</a></li>
+                    <li><a href="collection.html#victoriaradio">VICTORIA</a></li>
+                    <li><a href="collection.html#celineradio">CELINE</a></li>
+                    <li><a href="collection.html#gucciradio">GUCCI</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5 class="footer-heading">Subscribe</h5>
+                <p class="footer-desc">Join our elite circle for exclusive launches.</p>
+              <div class="newsletter-form">
+                <input type="email" id="newsletter-email" placeholder="Email Address">
+                  <button type="button" onclick="handleJoin()">JOIN</button>
+        
+                   </div>
+                   <!-- Added Email Link Below -->
+    <div class="footer-email-contact">
+        <i class="fas fa-envelope me-2"></i>
+        <a href="mailto:contact@scentora.com">contact@scentora.com</a>
+    </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 SCENTORA. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- aosanimation -->
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script src="scriptt.js"></script>
+
+</body>
+</html>

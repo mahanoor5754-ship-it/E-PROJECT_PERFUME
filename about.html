@@ -1,0 +1,2583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | L'Essence Luxury Perfumes</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+
+     <!-- sweetalert -->
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    
+
+
+    <style>
+         
+         /* navbar */
+
+
+
+:root {
+    --gold: #d4af37;
+    --dark-bg: #0a0a0a;
+    --text-light: #f4f4f4;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+    padding: 20px 0;
+    z-index: 1000;
+    display: flex !important; 
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #f5e6c8;
+}
+
+.nav-link {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #f5e6c8;
+    
+}
+
+
+/* Navbar ke andar ki img ke liye styling */
+.navbar img {
+  height: 40px; 
+  width: auto;  
+  margin-right: 10px; 
+  vertical-align: middle; 
+}
+
+
+.navbar-brand.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #D4AF37 !important; 
+}
+.custom-dropdown {
+    background-color: #121212 !important;
+    border: 1px solid #d4af37 !important; 
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Dropdown Items (Links) */
+.custom-dropdown .dropdown-item {
+    color: #fff !important;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect on Items */
+.custom-dropdown .dropdown-item:hover {
+    background-color: #1a1a1a !important;
+    color: #d4af37 !important; 
+    padding-left: 25px; 
+}
+
+/* Divider Line */
+.dropdown-divider {
+    border-top: 1px solid #333;
+}
+
+/* Dropdown Arrow Color */
+.dropdown-toggle::after {
+    color: #d4af37;
+}
+#icons a i{
+    color:  #f5e6c8;
+    transition: opacity 0.5s ease;
+}
+#icons a i:hover{
+    transform: translateY(-1px);
+}
+.cart-badge-style {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #d4af37; 
+    color: black;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+}
+
+
+/* modal */
+
+.custom-dark-modal {
+    background-color: #121212 !important;
+    border: 1px solid #333;
+    border-radius: 15px;
+    color: white;
+}
+
+.gold-text {
+    color: #d4af37;
+    font-size: 14px;
+}
+
+/* Input Styles */
+.dark-input {
+    background-color: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    color: white !important;
+    padding: 12px;
+}
+
+/* Hover effect on Text Areas/Inputs */
+.dark-input:hover, .dark-input:focus {
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4) !important;
+    outline: none;
+}
+
+/* Sign In Button: Dark with Golden Hover */
+.btn-dark-gold {
+    background-color: #000 !important;
+    color: #d4af37 !important;
+    border: 1px solid #333 !important;
+    padding: 10px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-dark-gold:hover {
+    border-color: #d4af37 !important;
+    background-color: #121212 !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+    
+
+
+.error-text {
+    color: #ff4d4d; 
+    font-size: 12px;
+    display: none; 
+    margin-top: 5px;
+}
+
+
+.is-invalid {
+    border-color: #ff4d4d !important;
+    box-shadow: 0 0 8px rgba(255, 77, 77, 0.3) !important;
+}
+
+
+/* Placeholder color adjust karne ke liye */
+.dark-input::placeholder {
+    color: #666 !important; 
+    opacity: 1; 
+}
+
+/* Firefox ke liye */
+.dark-input:-ms-input-placeholder {
+    color: #666 !important;
+}
+
+/* Internet Explorer ke liye */
+.dark-input::-ms-input-placeholder {
+    color: #666 !important;
+}
+
+
+.dark-input:hover::placeholder {
+    color: #888 !important;
+    transition: 0.3s;
+}
+
+.modal-title{
+  color: #f5e6c8;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+
+}
+
+
+
+.cart-badge-style {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #d4af37; 
+    color: black;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+}
+
+/* Modal Styling (Wohi jo pehle thi) */
+.custom-dark-modal {
+    background-color: #121212 !important;
+    border: 1px solid #d4af37;
+    color: white;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.remove-item {
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 2px 8px;
+}
+
+.remove-item:hover {
+    background-color: #d4af37 !important;
+    color: white !important;
+    border-color: #d4af37 !important;
+    transform: scale(1.1);
+}
+
+
+/* whishlist */
+
+/* Wishlist Badge */
+.wishlist-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #d4af37; 
+    color: white;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+}
+
+/* Red-Gold Border for Wishlist */
+.border-heart {
+    border: 1px solid #d4af37 !important;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.2);
+}
+
+.wish-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #333;
+}
+
+
+
+
+.heart-btn {
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    border: none; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.heart-btn:hover {
+    border: 1px solid #d4af37 !important;
+    transform: scale(1.05);
+    box-shadow: none !important; 
+}
+
+
+.heart-btn.active {
+    color: #ff0000;
+}
+ 
+
+
+
+
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F9E29C;
+            --dark-bg: #000000;
+            --darker-bg: #050505;
+            --text-muted: white;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--gold-light);
+        }
+
+        h1, h2, h3, .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold-text1 { color: var(--gold);}
+        .gold-bg { background-color: var(--gold); }
+
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-content {
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .hero-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--gold-light);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-10px) translateX(-50%);}
+            60% {transform: translateY(-5px) translateX(-50%);}
+        }
+
+        /* --- Brand Story --- */
+        .section-padding { padding: 100px 0; }
+
+        .story-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .story-img {
+            width: 100%;
+            transition: transform 0.8s ease;
+        }
+
+        .story-img-wrapper:hover .story-img {
+            transform: scale(1.1);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Craftsmanship --- */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            height: 100%;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .glass-card:hover .card-icon {
+            transform: rotateY(360deg);
+        }
+
+        /* --- Timeline --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--gold);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--dark-bg);
+            border: 4px solid var(--gold);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left { left: 0; }
+        .right { left: 50%; }
+
+        .right::after { left: -10px; }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background: var(--glass);
+            position: relative;
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+        }
+
+        /* --- Scent Philosophy --- */
+        .philosophy-marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            padding: 40px 0;
+            background: var(--darker-bg);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-word {
+            font-size: 6rem;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            margin: 0 50px;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(212, 175, 55, 0.6);
+            transition: all 0.4s ease;
+            cursor: default;
+        }
+
+        .marquee-word:hover {
+            color: var(--gold);
+            -webkit-text-stroke: 1px var(--gold);
+            text-shadow: 0 0 20px var(--gold);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- Signature Showcase --- */
+        .showcase-container {
+            perspective: 1000px;
+            padding: 50px 0;
+        }
+
+        .perfume-bottle {
+            width: 300px;
+            margin: 0 auto;
+            transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), filter 0.3s ease;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.2));
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        .glow-effect:hover {
+            filter: drop-shadow(0 0 40px rgba(212, 175, 55, 0.5));
+        }
+
+        /* --- Founder --- */
+        .founder-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--gold);
+            padding: 5px;
+            transition: transform 0.5s ease;
+        }
+
+        .founder-img:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover { color: var(--gold); }
+
+        /* --- Testimonials --- */
+        .testimonial-carousel {
+            background: var(--darker-bg);
+            padding: 60px;
+            border-radius: 30px;
+        }
+
+        .star-rating { color: var(--gold); }
+
+        /* --- Counter --- */
+        .counter-box {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .counter-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+        }
+
+        /* --- Newsletter --- */
+        .newsletter-section {
+            background: linear-gradient(45deg, #050505, #1a1a1a);
+            border-radius: 30px;
+            padding: 60px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .form-control {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+        }
+
+        .form-control:focus {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--gold);
+            box-shadow: none;
+            color: white;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: black;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: scale(1.05);
+        }
+
+        .btn-gold::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(45deg);
+            transition: 0.5s;
+            left: -100%;
+        }
+
+        .btn-gold:hover::after {
+            left: 100%;
+        }
+
+        /* Particles */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* --- Scent Smoke Effect --- */
+        .smoke-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: visible;
+        }
+
+        .smoke-particle {
+            position: absolute;
+            bottom: 60%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            filter: blur(15px);
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+
+        .showcase-container:hover .smoke-particle {
+            animation: smokeRise 3s infinite;
+        }
+
+
+
+
+        @keyframes smokeRise {
+            0% {
+                transform: translate(-50%, 0) scale(1);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translate(-50%, -200px) scale(10);
+                opacity: 0;
+            }
+        }
+
+        .smoke-particle:nth-child(2) { animation-delay: 0.7s; left: 45%; }
+        .smoke-particle:nth-child(3) { animation-delay: 1.4s; left: 55%; }
+        .smoke-particle:nth-child(4) { animation-delay: 2.1s; left: 48%; }
+        .smoke-particle:nth-child(5) { animation-delay: 2.8s; left: 52%; }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item::after { left: 21px; }
+            .right { left: 0; }
+            .marquee-word { font-size: 3rem; }
+        }
+
+
+
+         /* Social Proof Popup */
+
+
+ .sales-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #111; /* Black background */
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #D4AF37; /* Gold border */
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 9999;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sales-popup.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.popup-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#popup-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    background: #000;
+}
+
+.popup-text p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.popup-text small {
+    color: #D4AF37;
+    font-size: 0.75rem;
+}
+
+
+
+
+
+/* Checkout Modal Global Styling */
+
+
+#checkoutModal .modal-content {
+    background-color: #020202 !important; /* Deeper black */
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+/* Container Spacing */
+.checkout-container {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* Step Progress Bar */
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+.step-item {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+    position: relative;
+    padding-bottom: 10px;
+}
+.step-item.active {
+    color: #fffffd;
+    border-bottom: 2px solid #d4af37;
+}
+
+/* Input Fields - Sophisticated Look */
+.checkout-input-group {
+    margin-bottom: 25px;
+}
+.checkout-input-group label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.premium-input {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #333 !important;
+    border-radius: 0 !important;
+    color: white !important;
+    padding: 10px 0 !important;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.premium-input:focus {
+    box-shadow: none !important;
+    border-bottom: 1px solid #d4af37 !important;
+}
+
+/* Order Summary Card */
+.summary-card {
+    background: #161616;
+    padding: 30px;
+    border: 1px solid #222;
+    border-radius: 4px;
+}
+.summary-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 1px solid #333;
+}
+
+/* Button */
+.premium-btn {
+    background: #d4af37;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    width: 100%;
+    margin-top: 20px;
+    transition: 0.4s;
+}
+.premium-btn:hover {
+    background: #f2d06b;
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+}
+
+
+
+
+/* Validation Error Style */
+.is-invalid {
+    border-bottom: 1px solid #ff4d4d !important;
+}
+.error-msg {
+    color: #ff4d4d;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Success Overlay */
+.order-success-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #0f0f0f;
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.success-icon {
+    font-size: 60px;
+    color: #d4af37;
+    margin-bottom: 20px;
+    animation: scaleUp 0.5s ease-out;
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+
+/* Checkout Modal Header Styling */
+#checkoutModal .modal-header {
+    background-color: #080808ea !important; /* Rich Dark Black */
+    border-bottom: 1px solid rgba(212, 175, 55, 0.527) !important; /* Subtle Gold Line */
+    padding: 20px 30px;
+}
+
+#checkoutModal .modal-title {
+    color: #d4af37 !important; /* Luxury Gold */
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); /* Soft Gold Glow */
+}
+
+/* Close button (X) ka color white karne ke liye */
+#checkoutModal .btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+        
+
+        /* footer */
+
+.premium-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 80px 0 30px 0;
+    border-top: 1px solid #333;
+   font-family: 'Poppins', sans-serif;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    color: #D4AF37;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.footer-desc {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-heading {
+    color: #D4AF37;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #D4AF37;
+    padding-left: 5px;
+}
+
+.social-links a {
+    color: #D4AF37;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Newsletter Styles */
+.newsletter-form {
+    display: flex;
+    margin-top: 15px;
+    border-bottom: 1px solid #D4AF37;
+}
+
+.newsletter-form input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+
+.newsletter-form button {
+    background: transparent;
+    border: none;
+    color: #D4AF37;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    text-align: center;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+.footer-bottom a {
+    color: #555;
+    text-decoration: none;
+}
+
+/* Responsive adjust for mobile */
+@media (max-width: 768px) {
+    .premium-footer {
+        padding: 50px 0 20px 0;
+        text-align: center;
+    }
+    .footer-logo, .newsletter-form {
+        justify-content: center;
+    }
+}
+
+
+/* Footer Social Icons Pulse */
+.social-links a i {
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover i {
+    color: #D4AF37;
+    transform: scale(1.3) rotate(10deg);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+
+/* team */
+
+
+/* --- Team Section Base --- */
+.team-section {
+    background: #000;
+    padding: 80px 0;
+    width: 100%;
+}
+
+.team-row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.021);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 35px 20px;
+    flex: 1; 
+    min-width: 250px; 
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+   
+    transition: transform 0.5s ease, background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+    
+ 
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* --- Butter Smooth Hover --- */
+.glass-card:hover {
+    transform: translateY(-15px);
+    background: rgba(212, 175, 55, 0.08);
+    border-color: #D4AF37;
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
+}
+
+
+.card-animate {
+    animation: fadeUpOnLoad 1s ease-out;
+}
+
+@keyframes fadeUpOnLoad {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Image Box & Avatars --- */
+.img-box {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #D4AF37;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: rgba(212, 175, 55, 0.05);
+    transition: transform 0.5s ease;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.glass-card:hover .img-box {
+    transform: scale(1.1);
+    border-color: #fff;
+}
+
+/* --- Typography & Badges --- */
+.gold-text {
+    color: #D4AF37 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.badge-gold {
+    background: #D4AF37;
+    color: #000;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.badge-spacer {
+    height: 26px;
+    margin-bottom: 12px;
+}
+
+
+
+/* footer email link */
+email footer .footer-email-contact {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #888; 
+}
+
+.footer-email-contact i {
+    color: #D4AF37; 
+}
+
+.footer-email-contact a {
+    color: #888;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-email-contact a:hover {
+    color: #D4AF37;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
+}
+
+/* Mobile alignment fix */
+@media (max-width: 768px) {
+    .footer-email-contact {
+        justify-content: center;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+        <!-- navbar -->
+
+     
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top transition">
+        <div class="container">
+          <img src="images/logo1.png" alt="">
+            <a class="navbar-brand logo" href="index1.html">Scentora</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index1.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="collection.html">Collection</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+
+
+
+                <!-- icons -->
+
+
+                <div class="nav-icons d-flex align-items-center" id="icons">
+                    <a href="#" class="text-white me-3" style="font-size: 24px;"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      <i class="fa-solid fa-circle-user"></i>
+                    </a>
+                    <a href="#" class="text-white me-3"  data-bs-toggle="modal" data-bs-target="#cartModal" style="font-size: 20px;">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                         
+                    </a>
+                    
+                    <a href="#" class="text-white me-3 position-relative" data-bs-toggle="modal" data-bs-target="#wishlistModal" id="wishlistTrigger">
+    <i class="fa-solid fa-heart" style="font-size: 20px;"></i>
+    <span id="wishlist-count" class="wishlist-badge">0</span>
+</a>
+            </div>
+        </div>
+    </nav>
+
+
+  
+
+
+  
+
+    <!-- sign in modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1060;">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content border-0" style="background: #000;"> <div class="modal-header border-0 position-absolute end-0 top-0" style="z-index: 1070; padding: 30px;">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body p-0">
+        <div class="container-fluid h-100">
+          <div class="row h-100 g-0">
+            
+            <div class="col-lg-5 d-flex flex-column justify-content-center align-items-center px-5" style="background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);">
+              
+              <div style="max-width: 400px; width: 100%;">
+                <div class="text-center mb-5" data-aos="fade-up">
+                   <h2 style="color: #D4AF37; font-family: 'Playfair Display', serif; letter-spacing: 5px; text-transform: uppercase;">Scentora</h2>
+                   <p class="text-secondary small">Enter the world of premium fragrances</p>
+                </div>
+
+                <div class="mb-4">
+                  <label class="text-light small mb-2" style="letter-spacing: 1px;">EMAIL ADDRESS</label>
+                  <input type="email" class="form-control" id="email" 
+                         style="background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; border-radius: 0; padding: 12px 0;" 
+                         placeholder="name@example.com">
+                </div>
+                
+                <div class="mb-5">
+                  <label class="text-light small mb-2" style="letter-spacing: 1px;">PASSWORD</label>
+                  <input type="password" class="form-control" id="password" 
+                         style="background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; border-radius: 0; padding: 12px 0;" 
+                         placeholder="••••••••">
+                </div>
+
+                <button type="button" class="btn w-100 py-3 mt-3" id="signInBtn" 
+                        style="background: #D4AF37; color: #000; font-weight: bold; letter-spacing: 2px; border-radius: 0; transition: 0.3s;">
+                  SIGN IN
+                </button>
+                
+                <div class="text-center mt-4">
+                  <a href="#" class="small" style="color: #D4AF37; text-decoration: none; opacity: 0.7;">Forgot Password?</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7 d-none d-lg-block" style="position: relative; overflow: hidden;">
+              <div style="
+                background: url('images/poison1.png'); 
+                background-size: cover; 
+                background-position: center; 
+                height: 100%; 
+                width: 100%;
+                filter: brightness(0.7);">
+              </div>
+              
+              <div class="position-absolute bottom-0 start-0 p-5 text-white">
+                <h3 style="font-style: italic; font-weight: 300; opacity: 0.9;">"A fragrance is all that's necessary to complete an outfit."</h3>
+                <p style="color: #D4AF37;">— Scentora Collection</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+ <!-- cart modal -->
+
+ <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content custom-dark-modal">
+      <div class="modal-header border-0">
+        <h1 class="modal-title fs-5">Your Luxury Cart</h1>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="cart-items-list">
+            <p class="text-muted text-center" id="empty-msg">Your cart is empty.</p>
+            </div>
+        <hr style="border-color: #333;">
+        <div class="d-flex justify-content-between gold-text fw-bold">
+            <span>Total:</span>
+            <span>$<span id="total-price">0</span></span>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" style="color: white;" >Close</button>
+        <button type="button" class="btn" style="background: #d4af37; color: #000;" onclick="openCheckoutModal()" >Checkout Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<!-- wishlist -->
+
+<div class="modal fade" id="wishlistModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content custom-dark-modal border-heart">
+      <div class="modal-header border-0">
+        <h1 class="modal-title fs-5 text-white"><i class="fa-solid fa-heart me-2 text-danger"></i> My Wishlist</h1>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="wishlist-items-list">
+            <p class="text-muted text-center py-3">Your favorites list is empty.</p>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-dark-gold w-100" data-bs-dismiss="modal">Keep Shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+   <!-- Checkout Modal -->
+
+
+
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark text-white border-0" style="position: relative; overflow: hidden;">
+      
+      <div id="order-success" class="order-success-overlay" style="background-color: #000000;">
+          <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h2 style="color: #d4af37; letter-spacing: 5px; font-weight: 700;">ORDER PLACED</h2>
+          <p class="text-white-50 mt-2">Thank you for your purchase. Your luxury essence is on its way.</p>
+          <button class="premium-btn mt-4" style="width: auto; min-width: 200px;" onclick="location.reload()">Back to Shop</button>
+      </div>
+
+      <div class="modal-header border-secondary bg-dark">
+        <h5 class="modal-title" style="color: #d4af37; letter-spacing: 1px;">SECURE CHECKOUT</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="container mt-4 mb-5">
+          <div class="d-flex justify-content-center gap-4 mb-5 text-center">
+            <div id="step-1-label" class="step-item active">01 SHIPPING</div>
+            <div id="step-2-label" class="step-item">02 PAYMENT</div>
+            <div id="step-3-label" class="step-item">03 REVIEW</div>
+          </div>
+
+          <div class="row gx-lg-5">
+            <div class="col-lg-7">
+              <div id="step-1" class="checkout-step">
+                <h4 class="mb-4 text-white">Shipping Details</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="checkout-input-group">
+                      <label>FIRST NAME</label>
+                      <input type="text" id="fname" class="form-control premium-input" placeholder="Enter first name...">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="checkout-input-group">
+                      <label>LAST NAME</label>
+                      <input type="text" id="lname" class="form-control premium-input" placeholder="Enter last name...">
+                    </div>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <div class="checkout-input-group">
+                      <label>EMAIL ADDRESS</label>
+                      <input type="email" id="cemail" class="form-control premium-input" placeholder="e.g. alex@luxury.com">
+                    </div>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <div class="checkout-input-group">
+                      <label>FULL ADDRESS</label>
+                      <textarea id="caddress" class="form-control premium-input" rows="3" placeholder="Street, City, Country..."></textarea>
+                    </div>
+                  </div>
+                </div>
+                <button class="premium-btn w-100 mt-4" onclick="nextStep(2)">
+                  Continue to Payment <i class="fa-solid fa-arrow-right ms-2"></i>
+                </button>
+              </div>
+
+              <div id="step-2" class="checkout-step d-none">
+                <h4 class="mb-4 text-white">Payment Method</h4>
+                <div class="p-3 border border-secondary rounded mb-3 bg-dark hover-gold" style="cursor: pointer;">
+                  <input type="radio" name="pay" id="cod" checked> 
+                  <label for="cod" class="ms-2">Cash on Delivery</label>
+                </div>
+                <div class="p-3 border border-secondary rounded mb-3 opacity-50">
+                  <input type="radio" name="pay" id="card" disabled> 
+                  <label for="card" class="ms-2">Credit / Debit Card (Coming Soon)</label>
+                </div>
+                <div class="d-flex gap-3 mt-4">
+                  <button class="btn btn-outline-secondary w-50 py-3" onclick="nextStep(1)">BACK</button>
+                  <button class="premium-btn w-50" onclick="nextStep(3)">REVIEW ORDER</button>
+                </div>
+              </div>
+
+              <div id="step-3" class="checkout-step d-none">
+                <div class="text-center py-4 border border-secondary rounded bg-dark">
+                  <i class="fa-solid fa-receipt mb-3" style="font-size: 40px; color: #d4af37;"></i>
+                  <h4>Final Review</h4>
+                  <p class="text-muted px-4">Please confirm your items and total on the right before placing the order.</p>
+                </div>
+                <div class="d-flex gap-3 mt-4">
+                  <button class="btn btn-outline-secondary w-50 py-3" onclick="nextStep(2)">BACK</button>
+                  <button class="premium-btn w-50" onclick="placeOrder()">PLACE ORDER NOW</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5 mt-5 mt-lg-0">
+              <div class="summary-card p-4">
+                <h5 class="mb-4" style="color: #d4af37; letter-spacing: 2px;">YOUR ORDER</h5>
+                <div id="checkout-items-list" style="max-height: 400px; overflow-y: auto;">
+                   </div>
+                <hr style="border-color: #333;">
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                  <span class="text-muted">Total Amount</span>
+                  <span style="color: #d4af37; font-size: 24px; font-weight: 700;">$<span id="checkout-total-price">0</span></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">SCENTORA</h1>
+            <p class="hero-tagline">The Art of Olfactory Perfection</p>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down fa-2x gold-text"></i>
+        </div>
+    </section>
+
+    <!-- Brand Story Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-5 mb-md-0 reveal">
+                    <div class="story-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Perfume Creation" class="story-img">
+                    </div>
+                </div>
+                <div class="col-md-6 reveal">
+                    <h2 class="display-4 mb-4">Our <span class="gold-text1">Legacy</span></h2>
+                    <p class="lead text-muted">Born in the heart of Grasse, L'Essence was founded on a simple yet profound philosophy: that a fragrance is more than just a scent—it is a signature of the soul.</p>
+                    <p class="text-muted">For decades, our master perfumers have scoured the globe for the rarest botanicals and most exquisite resins. Every bottle of L'Essence is a labor of love, a symphony of notes composed with the precision of a master jeweler and the passion of a poet.</p>
+                    <p class="text-muted">We believe in the power of memory, the allure of mystery, and the timeless elegance of true luxury. Welcome to our world, where every drop tells a story.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Craftsmanship Section -->
+    <section class="section-padding bg-darker">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <h2 class="display-5">The <span class="gold-text1">Craftsmanship</span></h2>
+                <p class="text-muted">Meticulous detail in every single drop</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 reveal">
+                    <div class="glass-card">
+                        <i class="fas fa-leaf card-icon"></i>
+                        <h3>Natural Oils</h3>
+                        <p class="text-muted">Sourced from sustainable gardens across five continents.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 reveal">
+                    <div class="glass-card">
+                        <i class="fas fa-spa card-icon"></i>
+                        <h3>Rare Flowers</h3>
+                        <p class="text-muted">Hand-picked at dawn to preserve their delicate essence.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 reveal">
+                    <div class="glass-card">
+                        <i class="fas fa-vial card-icon"></i>
+                        <h3>Master Blending</h3>
+                        <p class="text-muted">Aged in oak barrels for unparalleled depth and complexity.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 reveal">
+                    <div class="glass-card">
+                        <i class="fas fa-box-open card-icon"></i>
+                        <h3>Luxury Packaging</h3>
+                        <p class="text-muted">Hand-finished crystal bottles with 24k gold accents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Journey Timeline -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5 reveal">
+                <h2 class="display-5">Our <span class="gold-text1">Journey</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content">
+                        <h4 class="gold-text">2014</h4>
+                        <h5>Brand Founded</h5>
+                        <p class="text-muted small">SCENTORA opened its first boutique in Paris, redefining modern luxury.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right reveal">
+                    <div class="timeline-content">
+                        <h4 class="gold-text">2020</h4>
+                        <h5>First Collection</h5>
+                        <p class="text-muted small">The 'CHANEL' collection received international acclaim.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left reveal">
+                    <div class="timeline-content">
+                        <h4 class="gold-text">2022</h4>
+                        <h5>Global Shipping</h5>
+                        <p class="text-muted small">Expanding our reach to over 50 countries worldwide.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right reveal">
+                    <div class="timeline-content">
+                        <h4 class="gold-text">2024</h4>
+                        <h5>100k Customers</h5>
+                        <p class="text-muted small">Celebrating a milestone of shared olfactory memories.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scent Philosophy Section -->
+    <section class="philosophy-marquee">
+        <div class="marquee-content">
+            <span class="marquee-word">Aura</span>
+            <span class="marquee-word">Luxury</span>
+            <span class="marquee-word">Fine</span>
+            <span class="marquee-word">Scent</span>
+            <span class="marquee-word">Olfactory</span>
+            <span class="marquee-word">Sensory</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="marquee-word">Aura</span>
+            <span class="marquee-word">Luxury</span>
+            <span class="marquee-word">Fine</span>
+            <span class="marquee-word">Scent</span>
+            <span class="marquee-word">Olfactory</span>
+            <span class="marquee-word">Sensory</span>
+        </div>
+    </section>
+
+    <!-- Signature Perfume Showcase -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 reveal">
+                    <div class="showcase-container">
+                        <div class="smoke-container">
+                            <div class="smoke-particle"></div>
+                            <div class="smoke-particle"></div>
+                            <div class="smoke-particle"></div>
+                            <div class="smoke-particle"></div>
+                            <div class="smoke-particle"></div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Signature Perfume" class="perfume-bottle glow-effect" id="parallax-bottle">
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal">
+                    <h2 class="display-4 mb-4">The <span class="gold-text1">Signature</span></h2>
+                    <p class="lead">Our masterpiece: L'Or Noir.</p>
+                    <p class="text-muted">A daring blend of Bulgarian Rose, Oud, and rare Ambergris. This fragrance is designed for those who command presence without saying a word.</p>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="fas fa-check gold-text me-2"></i> Top Notes: Saffron, Bergamot</li>
+                        <li><i class="fas fa-check gold-text me-2"></i> Heart Notes: Bulgarian Rose, Jasmine</li>
+                        <li><i class="fas fa-check gold-text me-2"></i> Base Notes: Oud, Sandalwood, Amber</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- Testimonials Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="testimonial-carousel reveal">
+                <div id="testimonialSlider" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner text-center">
+                        <div class="carousel-item active">
+                            <div class="star-rating mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="h4 mb-4">"The most sophisticated scent I have ever worn. It lasts all day and the complexity is simply unmatched."</p>
+                            <h6 class="gold-text">- Elena Rodriguez</h6>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="star-rating mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="h4 mb-4">"L'Essence is true luxury. The packaging alone is a work of art, and the fragrance is divine."</p>
+                            <h6 class="gold-text">- James Sterling</h6>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="star-rating mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="h4 mb-4">"A masterpiece of perfumery. I get compliments every time I wear L'Or Noir."</p>
+                            <h6 class="gold-text">- Sophia Chen</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Counter Section -->
+    <section class="section-padding bg-darker">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6 reveal">
+                    <div class="counter-box">
+                        <span class="counter-number" data-target="10000">0</span>
+                        <p class="text-muted">Happy Clients</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 reveal">
+                    <div class="counter-box">
+                        <span class="counter-number" data-target="150">0</span>
+                        <p class="text-muted">Luxury Scents</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 reveal">
+                    <div class="counter-box">
+                        <span class="counter-number" data-target="25">0</span>
+                        <p class="text-muted">Global Outlets</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 reveal">
+                    <div class="counter-box">
+                        <span class="counter-number" data-target="12">0</span>
+                        <p class="text-muted">Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+ <section class="team-section">
+    <div class="container-fluid">
+        <h2 class="text-center gold-text mb-2 fade-in-text" style="font-size: 34px;">The Architects of Scentora</h2>
+        <p class="text-center mb-5 fade-in-text" style="color: whitesmoke;">Crafting luxury through code and design.</p>
+        
+        <div class="team-row d-flex justify-content-center flex-wrap gap-3">
+            
+
+        
+
+            <div class="glass-card leader-card card-animate">
+                <div class="img-box rounded-circle">
+                    <img src="images/mahanoor.jpg" alt="Leader" class="img-fluid rounded-circle">
+                </div>
+                <div class="info mt-3 text-center">
+                    <div class="badge-gold">LEADER</div>
+                    <h5 class="text-white mb-1">MAHANOOR</h5>
+                    <p class="gold-text x-small">Chief Product Designer & Collection Architect</p>
+                </div>
+            </div>
+
+            <div class="glass-card integrator-card card-animate">
+                <div class="img-box rounded-circle">
+                    <img src="images/hiba.jpg" alt="You" class="img-fluid rounded-circle">
+                </div>
+                <div class="info mt-3 text-center">
+                    <div class="badge-gold">CORE ARCHITECT</div>
+                    <h5 class="text-white mb-1">HIBA KAFEEL</h5>
+                    <p class="gold-text x-small">Lead Programmer & Project Integrator</p>
+                </div>
+            </div>
+
+            <div class="glass-card card-animate">
+                <div class="img-box rounded-circle">
+                    <img src="images/umer.jpg" alt="Member 3" class="img-fluid rounded-circle">
+                </div>
+                <div class="info mt-3 text-center">
+                    <div class="badge-gold">DESIGN ABOUT</div>
+                    <h5 class="text-white mb-1">UMER PERVEZ KHALIDI</h5>
+                    <p class="gold-text x-small">UI Layout Designer & Visual Architect</p>
+                </div>
+            </div>
+
+            <div class="glass-card card-animate">
+                <div class="img-box rounded-circle">
+                    <img src="images/shaheer.jpg" alt="Member 4" class="img-fluid rounded-circle">
+                </div>
+                <div class="info mt-3 text-center">
+                    <div class="badge-spacer"></div> <h5 class="text-white mb-1">S.M SHAHEER ALI</h5>
+                    <p class="gold-text x-small">Project Asset Coordinator & Operations Manager</p>
+                </div>
+            </div>
+
+            <div class="glass-card card-animate">
+                <div class="img-box rounded-circle">
+                    <img src="images/ayesha.jpg" alt="Member 5" class="img-fluid rounded-circle">
+                </div>
+                <div class="info mt-3 text-center">
+                    <div class="badge-spacer"></div> <h5 class="text-white mb-1">SYEDA AYESHA IBRAR</h5>
+                    <p class="gold-text x-small">Documentation & QA Support</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Newsletter Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="newsletter-section text-center reveal">
+                <h2 class="display-5 mb-3">Join the <span class="gold-text">Elite</span></h2>
+                <p class="text-muted mb-5">Subscribe to receive exclusive access to our limited editions and private events.</p>
+                <form id="newsletterForm" class="row justify-content-center g-3">
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" placeholder="Your Email Address" required>
+                    </div>
+                    <div class="col-md-auto">
+                        <button type="submit" class="btn btn-gold">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+   
+<!-- Social Proof Popup -->
+
+
+<div id="sales-notification" class="sales-popup hidden">
+    <div class="popup-content">
+        <img id="popup-img" src="images/logo.png" alt="Perfume">
+        <div class="popup-text">
+            <p id="popup-msg"></p>
+            <small id="popup-time"></small>
+        </div>
+    </div>
+</div>
+
+
+
+
+   <!-- footer -->
+
+
+
+
+<footer class="premium-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="footer-logo">
+                    <img src="images/logo1.png" alt="Scentora" class="footer-logo-img">
+                    <span class="brand-name" style="font-family: 'Playfair Display', serif;">SCENTORA</span>
+                </div>
+                <p class="footer-desc" style="font-family: 'Playfair Display', serif;">Crafting timeless scents that linger in memory. Redefining luxury, one drop at a time.</p>
+                 <div class="social-links">
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram" style="color: #D4AF37;"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f" style="color: #D4AF37;"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter" style="color: #D4AF37;"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="collection.html">Collection</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="footer-heading">Collections</h5>
+                       <ul class="footer-links">
+                    <li><a href="collection.html#chanelradio">CHANEL</a></li>
+                    <li><a href="collection.html#diorradio">DIOR</a></li>
+                    <li><a href="collection.html#calvinradio">CALVIN KLEIN</a></li>
+                    <li><a href="collection.html#victoriaradio">VICTORIA</a></li>
+                    <li><a href="collection.html#celineradio">CELINE</a></li>
+                    <li><a href="collection.html#gucciradio">GUCCI</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5 class="footer-heading">Subscribe</h5>
+                <p class="footer-desc" style="font-family: 'Playfair Display', serif;">Join our elite circle for exclusive launches.</p>
+              <div class="newsletter-form">
+                <input type="email" id="newsletter-email" placeholder="Email Address">
+                  <button type="button" onclick="handleJoin()">JOIN</button>
+                   </div>
+                   <!-- Added Email Link Below -->
+    <div class="footer-email-contact">
+        <i class="fas fa-envelope me-2"></i>
+        <a href="mailto:contact@scentora.com">contact@scentora.com</a>
+    </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p style="font-family: 'Playfair Display', serif; color:#f5e6c8 ;">&copy; 2026 SCENTORA. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+
+     //   navbar
+
+
+
+  $(document).ready(function() {
+    // Navbar background change on scroll
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) {
+            $('.navbar').addClass('scrolled shadow-sm');
+        } else {
+            $('.navbar').removeClass('scrolled shadow-sm');
+        }
+    });
+
+    // Smooth subtle parallax effect for the large background text
+   $(window).on('scroll', function() {
+    var scroll = $(window).scrollTop();
+    $('.hero-title').css({
+        // Yahan se -50% hata diya, sirf vertical movement rakhi hai
+        'transform': 'translateY(' + (scroll * 0.1) + 'px)' 
+    });
+});
+});
+
+$(document).ready(function(){
+    $(".hero-title").fadeIn(3000); // 2000ms = 2 seconds
+});
+
+$(document).ready(function(){
+    $(".navbar").fadeIn(3000); // 2000ms = 2 seconds
+});
+
+$(document).ready(function(){
+    $("#button").fadeIn(3000); // 2000ms = 2 seconds
+});
+
+$(document).ready(function(){
+    $(".hero-subtitle ").fadeIn(3000); // 2000ms = 2 seconds
+});
+
+
+// signin
+
+
+
+
+$(document).ready(function() {
+    $('#signInBtn').on('click', function() {
+        // Show golden message with a slide effect
+        $('#loginMsg').slideDown();
+
+         
+      
+        setTimeout(function(){
+            $('#exampleModal').modal('hide');
+            $('#loginMsg').hide();
+        }, 3000);
+      
+    });
+
+    // Reset message when modal is closed
+    $('#exampleModal').on('hidden.bs.modal', function () {
+        $('#loginMsg').hide();
+    });
+});
+
+
+
+$(document).ready(function() {
+    $('#signInBtn').on('click', function() {
+        let email = $('#email').val().trim();
+        let password = $('#password').val().trim();
+        let isValid = true;
+
+        // Reset previous states
+        $('.dark-input').removeClass('is-invalid');
+        $('.error-text').hide();
+        $('#loginMsg').hide();
+
+        // Email Validation
+        if (email === "" || !email.includes('@')) {
+            $('#email').addClass('is-invalid');
+            $('#emailError').fadeIn();
+            isValid = false;
+        }
+
+        // Password Validation (at least 6 characters)
+        if (password.length < 6) {
+            $('#password').addClass('is-invalid');
+            $('#passError').fadeIn();
+            isValid = false;
+        }
+
+        // Final Check
+        if (isValid) {
+            $(this).html('<i class="fas fa-spinner fa-spin"></i> Processing...');
+            $(this).prop('disabled', true); 
+
+            setTimeout(function() {
+                $('#loginMsg').fadeIn();
+                $('#signInBtn').html('Sign In').prop('disabled', false);
+                
+                // Modal ko band karne ke liye (Optional)
+                
+            }, 1500);
+        }
+
+
+        
+
+
+    });
+
+    // Inputs par click karne se error hat jaye
+    $('.dark-input').on('input', function() {
+        $(this).removeClass('is-invalid');
+        $(this).next('.error-text').fadeOut();
+    });
+});
+
+
+
+
+
+
+// Checkout Modal
+$(document).ready(function() {
+   
+    let cart = JSON.parse(localStorage.getItem('user_cart')) || [];
+
+
+    updateCartLayout();
+
+   
+    function saveCartToStorage() {
+        localStorage.setItem('user_cart', JSON.stringify(cart));
+    }
+
+    // 2. Buy Now Click Event
+    $(document).on('click', '.buy-now', function(e) {
+        e.preventDefault();
+        
+        let itemName = $(this).attr('data-name'); 
+        let itemPrice = $(this).attr('data-price');
+        let itemImg = "";
+
+        
+        if ($(this).closest('.modal').length > 0) {
+           
+            itemImg = $(this).closest('.modal').find('.carousel-item.active img').attr('src');
+        } else {
+            // Agar click Card par hua hai
+            let bgImg = $(this).closest('.col-6, .col-md-3').find('.img-front').css('background-image');
+            itemImg = bgImg ? bgImg.replace('url(','').replace(')','').replace(/\"/gi, "") : "";
+        }
+
+        if (itemName && itemPrice) {
+            cart.push({ 
+                name: itemName, 
+                price: parseFloat(itemPrice),
+                img: itemImg
+            });
+            
+            saveCartToStorage();
+            updateCartLayout();
+            
+            // Button Feedback
+            let btn = $(this);
+            let originalText = btn.text();
+            btn.text("Added!").css("border-color", "#d4af37");
+            setTimeout(() => btn.text(originalText).css("border-color", "#333"), 800);
+        }
+    });
+
+    // 3. Remove Item from Cart
+    $(document).on('click', '.remove-item', function() {
+        let index = $(this).data('index');
+        cart.splice(index, 1);
+        
+        saveCartToStorage(); // Save updated cart
+        updateCartLayout();
+        renderCheckoutSummary(); 
+    });
+
+    // 4. Update UI (Badge, List, Total)
+    function updateCartLayout() {
+        let html = '';
+        let total = 0;
+        $('#cart-count').text(cart.length); // Update Badge count
+
+        if (cart.length === 0) {
+            html = '<p class="text-center text-muted py-3">Your cart is empty.</p>';
+        } else {
+            cart.forEach((item, index) => {
+                html += `
+                <div class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
+                    <div class="d-flex align-items-center">
+                        <img src="${item.img}" style="width:50px; height:50px; object-fit:cover; border-radius:5px; margin-right:12px; border: 1px solid #333;">
+                        <div>
+                            <span class="text-white d-block" style="font-size:14px;">${item.name}</span>
+                            <span style="color: #d4af37; font-size: 13px;">$${item.price.toFixed(2)}</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-sm remove-item" data-index="${index}" style="color: #ff4d4d;">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>`;
+                total += item.price;
+            });
+        }
+        $('#cart-items-list').html(html);
+        $('#total-price').text(total.toFixed(2));
+    }
+
+    // 5. Render Checkout Summary
+    function renderCheckoutSummary() {
+        let html = '';
+        let total = 0;
+
+        if (cart.length === 0) {
+            html = '<p class="text-center text-muted">No items to checkout.</p>';
+        } else {
+            cart.forEach(item => {
+                html += `
+                <div class="d-flex align-items-center mb-4">
+                    <img src="${item.img}" style="width:70px; height:70px; border-radius:8px; object-fit:cover; border: 1px solid #d4af37;">
+                    <div class="flex-grow-1 ms-3">
+                        <div class="fw-bold text-white" style="letter-spacing: 1px; font-size: 15px;">${item.name.toUpperCase()}</div>
+                        <div style="color: #d4af37; font-size: 14px;">$${item.price.toFixed(2)}</div>
+                    </div>
+                </div>`;
+                total += item.price;
+            });
+        }
+        $('#checkout-items-list').html(html);
+        $('#checkout-total-price').text(total.toFixed(2));
+    }
+
+    // 6. Global Window Functions
+    window.openCheckoutModal = function() {
+        if(cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+        renderCheckoutSummary();
+        $('#mymodal').modal('hide'); 
+        $('#checkoutModal').modal('show'); 
+    }
+
+    window.placeOrder = function() {
+        $('#order-success').css('display', 'flex').hide().fadeIn(500);
+        cart = []; 
+        saveCartToStorage(); // Clear localStorage on order
+        updateCartLayout();
+    };
+
+    // --- Validation & Steps Logic ---
+    function validateStep1() {
+        let isValid = true;
+        $('.error-msg').remove(); 
+        $('.premium-input').removeClass('is-invalid');
+
+        if ($('#fname').val().trim() === "") {
+            $('#fname').addClass('is-invalid').after('<span class="error-msg">Required</span>');
+            isValid = false;
+        }
+        if ($('#cemail').val().trim() === "" || !$('#cemail').val().includes('@')) {
+            $('#cemail').addClass('is-invalid').after('<span class="error-msg">Invalid Email</span>');
+            isValid = false;
+        }
+        if ($('#caddress').val().trim() === "") {
+            $('#caddress').addClass('is-invalid').after('<span class="error-msg">Address Required</span>');
+            isValid = false;
+        }
+        return isValid;
+    }
+
+    window.nextStep = function(step) {
+        if (step === 2 && !validateStep1()) return; 
+
+        $('.checkout-step').addClass('d-none');
+        $(`#step-${step}`).removeClass('d-none');
+        $('.step-item').removeClass('active');
+        $(`#step-${step}-label`).addClass('active');
+    };
+});
+
+
+
+
+
+
+
+
+
+
+// wishlist
+// wishlist logic with LocalStorage
+$(document).ready(function() {
+    // 1. Load Wishlist from LocalStorage on Page Load
+    let savedWishlist = localStorage.getItem('userWishlist');
+    let wishlist = savedWishlist ? JSON.parse(savedWishlist) : [];
+
+    // Pehli baar UI load karne ke liye
+    updateAllUI();
+
+    // 2. Wishlist Button Toggle (Card par click)
+    $(document).on('click', '.heart-btn', function(e) {
+        e.preventDefault();
+        let name = $(this).attr('data-name');
+        let index = wishlist.indexOf(name);
+
+        if (index === -1) {
+            wishlist.push(name);
+            $(this).addClass('active').css('color', '#ff0000');
+        } else {
+            wishlist.splice(index, 1);
+            $(this).removeClass('active').css('color', '');
+        }
+        
+        saveAndRefresh(); // Save to LocalStorage
+    });
+
+    // 3. Modal ke andar se Remove button click
+    $(document).on('click', '.remove-wish', function() {
+        let name = $(this).attr('data-name');
+        
+        wishlist = wishlist.filter(item => item !== name);
+
+        // Card wale button ko wapis normal karne ke liye
+        $(`.heart-btn[data-name="${name}"]`).removeClass('active').css('color', '');
+
+        saveAndRefresh(); // Save to LocalStorage
+    });
+
+    // 4. Save to LocalStorage and Update UI
+    function saveAndRefresh() {
+        localStorage.setItem('userWishlist', JSON.stringify(wishlist));
+        updateAllUI();
+    }
+
+    // 5. UI Update Function
+    function updateAllUI() {
+        // Badge Update
+        $('#wishlist-count').text(wishlist.length);
+
+        // Card buttons ko highlight karne ke liye (jab page refresh ho)
+        $('.heart-btn').each(function() {
+            let btnName = $(this).attr('data-name');
+            if (wishlist.includes(btnName)) {
+                $(this).addClass('active').css('color', '#ff0000');
+            } else {
+                $(this).removeClass('active').css('color', '');
+            }
+        });
+
+        let html = '';
+        if (wishlist.length === 0) {
+            html = '<p class="text-center text-muted py-3">Wishlist is empty</p>';
+        } else {
+            wishlist.forEach((item) => {
+                html += `
+                <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                    <span class="text-white">${item}</span>
+                    <button class="btn btn-sm text-danger remove-wish" data-name="${item}">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>`;
+            });
+        }
+        $('#wishlist-items-list').html(html);
+    }
+});
+
+
+
+
+
+
+
+        $(document).ready(function() {
+            // Hero Animation
+            setTimeout(function() {
+                $('.hero-content').addClass('visible');
+            }, 500);
+
+            // Scroll Reveal
+            function reveal() {
+                var reveals = document.querySelectorAll(".reveal");
+                for (var i = 0; i < reveals.length; i++) {
+                    var windowHeight = window.innerHeight;
+                    var elementTop = reveals[i].getBoundingClientRect().top;
+                    var elementVisible = 150;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveals[i].classList.add("active");
+                    }
+                }
+            }
+            window.addEventListener("scroll", reveal);
+            reveal(); // Initial check
+
+            // Refined Parallax Effect for Bottle
+            $('.showcase-container').on('mousemove', function(e) {
+                const $container = $(this);
+                const $bottle = $('#parallax-bottle');
+                
+                const width = $container.width();
+                const height = $container.height();
+                const offset = $container.offset();
+                
+                const mouseX = e.pageX - offset.left;
+                const mouseY = e.pageY - offset.top;
+                
+                const centerX = width / 2;
+                const centerY = height / 2;
+                
+                const deltaX = (mouseX - centerX) / centerX;
+                const deltaY = (mouseY - centerY) / centerY;
+                
+                // More pronounced movement and rotation
+                const rotateX = deltaY * -25; // Max 25 degrees
+                const rotateY = deltaX * 25;  // Max 25 degrees
+                const translateX = deltaX * 15; // Max 15px
+                const translateY = deltaY * 15; // Max 15px
+                
+                $bottle.css('transform', `translate3d(${translateX}px, ${translateY}px, 50px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
+            });
+
+            $('.showcase-container').on('mouseleave', function() {
+                $('#parallax-bottle').css('transform', 'translate3d(0, 0, 0) rotateX(0) rotateY(0)');
+            });
+
+            // Counter Animation
+            const counters = document.querySelectorAll('.counter-number');
+            const speed = 200;
+
+            const startCounters = () => {
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 1);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                });
+            };
+
+            // Trigger counter when visible
+            let counterStarted = false;
+            $(window).scroll(function() {
+                var hT = $('.counter-box').offset().top,
+                    hH = $('.counter-box').outerHeight(),
+                    wH = $(window).height(),
+                    wS = $(this).scrollTop();
+                if (wS > (hT + hH - wH) && !counterStarted) {
+                    startCounters();
+                    counterStarted = true;
+                }
+            });
+
+            // Newsletter Form
+            $('#newsletterForm').on('submit', function(e) {
+                e.preventDefault();
+                const email = $(this).find('input').val();
+                $(this).fadeOut(300, function() {
+                    $(this).html('<div class="alert alert-success bg-transparent border-gold text-white">Thank you! You have been added to our private list.</div>').fadeIn();
+                });
+            });
+
+            // Particles.js Config
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#D4AF37" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": false },
+                    "move": { "enable": true, "speed": 1, "direction": "top", "random": true, "straight": false, "out_mode": "out" }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { "onhover": { "enable": true, "mode": "bubble" }, "onclick": { "enable": true, "mode": "push" } },
+                    "modes": { "bubble": { "distance": 100, "size": 5, "duration": 2, "opacity": 0.8, "speed": 3 } }
+                }
+            });
+        });
+
+
+    
+// sweetalert footer
+
+function handleJoin() {
+    const emailInput = document.getElementById('newsletter-email');
+    
+    if (emailInput.value.trim() !== "") {
+        Swal.fire({
+            title: 'Welcome to Scentora!',
+            text: 'You have successfully joined our exclusive newsletter.',
+            icon: 'success',
+            background: '#111', // Black background
+            color: '#D4AF37',   // Gold text
+            confirmButtonColor: '#D4AF37',
+            confirmButtonText: 'Great!'
+        });
+        emailInput.value = "";
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please enter your email first.',
+            background: '#111',
+            color: '#fff',
+            confirmButtonColor: '#D4AF37'
+        });
+    }
+}
+
+// Social Proof Popup js
+
+
+const notifications = [
+    { name: "Anam from Karachi", product: "Scentora Gold", time: "2 mins ago" },
+    { name: "Zain from Lahore", product: "Midnight Oud", time: "5 mins ago" },
+    { name: "Sara from Islamabad", product: "Royal Rose", time: "just now" },
+    { name: "Hamza from Dubai", product: "Scentora Classic", time: "10 mins ago"},
+    { name: "Sadia from multan", product: "Ck perfume", time: "8 mins ago"},
+    { name: "Arsalan from Qatar", product: "Chenal Coco", time: "5 mins ago"},
+];
+
+const popup = document.getElementById('sales-notification');
+const msg = document.getElementById('popup-msg');
+const time = document.getElementById('popup-time');
+
+function showNotification() {
+    // Random data pick karein
+    const randomIdx = Math.floor(Math.random() * notifications.length);
+    const data = notifications[randomIdx];
+
+    // Data set karein
+    msg.innerHTML = `<strong>${data.name}</strong> just bought <strong>${data.product}</strong>`;
+    time.innerText = data.time;
+
+    // Show popup
+    popup.classList.remove('hidden');
+
+    // 5 seconds baad hide kar dein
+    setTimeout(() => {
+        popup.classList.add('hidden');
+    }, 5000);
+}
+
+// Har 12 seconds baad naya notification dikhayein
+setInterval(showNotification, 12000);
+
+// Pehla notification 3 seconds baad aaye ga
+setTimeout(showNotification, 3000);
+
+
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
+

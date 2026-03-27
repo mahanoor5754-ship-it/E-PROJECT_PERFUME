@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+      <link rel="stylesheet" href="contact.css">
+      <!-- sweetalert -->
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+</head>
+<body>
+
+    <!-- navbar -->
+
+     
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top transition">
+        <div class="container">
+          <img src="images/logo1.png" alt="">
+            <a class="navbar-brand logo" href="index1.html">Scentora</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link " href="index1.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                   <li class="nav-item"><a class="nav-link" href="collection.html">Collection</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+
+
+
+                <!-- icons -->
+
+
+                <div class="nav-icons d-flex align-items-center" id="icons">
+                    <a href="#" class="text-white me-3" style="font-size: 24px;"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      <i class="fa-solid fa-circle-user"></i>
+                    </a>
+                     <a href="#" class="text-white me-3"  data-bs-toggle="modal" data-bs-target="#mymodal" style="font-size: 20px;">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                         
+                    </a>
+                    
+                    <a href="#" class="text-white me-3 position-relative" data-bs-toggle="modal" data-bs-target="#wishlistModal" id="wishlistTrigger">
+    <i class="fa-solid fa-heart" style="font-size: 20px;"></i>
+    <span id="wishlist-count" class="wishlist-badge">0</span>
+</a>
+            </div>
+        </div>
+    </nav>
+
+
+  
+
+
+  
+
+    <!-- sign in modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1060;">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content border-0" style="background: #000;"> <div class="modal-header border-0 position-absolute end-0 top-0" style="z-index: 1070; padding: 30px;">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body p-0">
+        <div class="container-fluid h-100">
+          <div class="row h-100 g-0">
+            
+            <div class="col-lg-5 d-flex flex-column justify-content-center align-items-center px-5" style="background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);">
+              
+              <div style="max-width: 400px; width: 100%;">
+                <div class="text-center mb-5" data-aos="fade-up">
+                   <h2 style="color: #D4AF37; font-family: 'Playfair Display', serif; letter-spacing: 5px; text-transform: uppercase;">Scentora</h2>
+                   <p class="text-secondary small">Enter the world of premium fragrances</p>
+                </div>
+
+                <div class="mb-4">
+                  <label class="text-light small mb-2" style="letter-spacing: 1px;">EMAIL ADDRESS</label>
+                  <input type="email" class="form-control" id="email" 
+                         style="background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; border-radius: 0; padding: 12px 0;" 
+                         placeholder="name@example.com">
+                </div>
+                
+                <div class="mb-5">
+                  <label class="text-light small mb-2" style="letter-spacing: 1px;">PASSWORD</label>
+                  <input type="password" class="form-control" id="password" 
+                         style="background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; border-radius: 0; padding: 12px 0;" 
+                         placeholder="••••••••">
+                </div>
+
+                <button type="button" class="btn w-100 py-3 mt-3" id="signInBtn" 
+                        style="background: #D4AF37; color: #000; font-weight: bold; letter-spacing: 2px; border-radius: 0; transition: 0.3s;">
+                  SIGN IN
+                </button>
+                
+                <div class="text-center mt-4">
+                  <a href="#" class="small" style="color: #D4AF37; text-decoration: none; opacity: 0.7;">Forgot Password?</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7 d-none d-lg-block" style="position: relative; overflow: hidden;">
+              <div style="
+                background: url('images/signin.png'); 
+                background-size: cover; 
+                background-position: center; 
+                height: 100%; 
+                width: 100%;
+                filter: brightness(0.7);">
+              </div>
+              
+              <div class="position-absolute bottom-0 start-0 p-5 text-white">
+                <h3 style="font-style: italic; font-weight: 300; opacity: 0.9;">"A fragrance is all that's necessary to complete an outfit."</h3>
+                <p style="color: #D4AF37;">— Scentora Collection</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+ <!-- cart modal -->
+
+ <div class="modal fade" id="mymodal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content custom-dark-modal bg-dark text-white" style="border: 1px solid #d4af37;">
+      <div class="modal-header border-0">
+        <h1 class="modal-title fs-5" style="color: #d4af37;">Your Luxury Cart</h1>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="cart-items-list">
+            <p class="text-muted text-center">Your cart is empty.</p>
+        </div>
+        <hr style="border-color: #333;">
+        <div class="d-flex justify-content-between fw-bold">
+            <span style="color: #d4af37;">Total:</span>
+            <span style="color: #d4af37;">$<span id="total-price">0</span></span>
+        </div>
+      </div>
+      <div class="modal-footer border-secondary">
+        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" style="color: white;" >Close</button>
+        <button type="button" class="btn" style="background: #d4af37; color: #000;" onclick="openCheckoutModal()" >Checkout Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<!-- wishlist -->
+
+<div class="modal fade" id="wishlistModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content custom-dark-modal border-heart">
+      <div class="modal-header border-0">
+        <h1 class="modal-title fs-5 text-white"><i class="fa-solid fa-heart me-2 text-danger"></i> My Wishlist</h1>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="wishlist-items-list">
+            <p class="text-muted text-center py-3">Your favorites list is empty.</p>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-dark-gold w-100" data-bs-dismiss="modal">Keep Shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Checkout Modal -->
+
+
+
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-dark text-white border-0" style="position: relative; overflow: hidden;">
+      
+      <div id="order-success" class="order-success-overlay" style="background-color: #000000;">
+          <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h2 style="color: #d4af37; letter-spacing: 5px; font-weight: 700;">ORDER PLACED</h2>
+          <p class="text-white-50 mt-2">Thank you for your purchase. Your luxury essence is on its way.</p>
+          <button class="premium-btn mt-4" style="width: auto; min-width: 200px;" onclick="location.reload()">Back to Shop</button>
+      </div>
+
+      <div class="modal-header border-secondary bg-dark">
+        <h5 class="modal-title" style="color: #d4af37; letter-spacing: 1px;">SECURE CHECKOUT</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="container mt-4 mb-5">
+          <div class="d-flex justify-content-center gap-4 mb-5 text-center">
+            <div id="step-1-label" class="step-item active">01 SHIPPING</div>
+            <div id="step-2-label" class="step-item">02 PAYMENT</div>
+            <div id="step-3-label" class="step-item">03 REVIEW</div>
+          </div>
+
+          <div class="row gx-lg-5">
+            <div class="col-lg-7">
+              <div id="step-1" class="checkout-step">
+                <h4 class="mb-4 text-white">Shipping Details</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="checkout-input-group">
+                      <label>FIRST NAME</label>
+                      <input type="text" id="fname" class="form-control premium-input" placeholder="Enter first name...">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="checkout-input-group">
+                      <label>LAST NAME</label>
+                      <input type="text" id="lname" class="form-control premium-input" placeholder="Enter last name...">
+                    </div>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <div class="checkout-input-group">
+                      <label>EMAIL ADDRESS</label>
+                      <input type="email" id="cemail" class="form-control premium-input" placeholder="e.g. alex@luxury.com">
+                    </div>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <div class="checkout-input-group">
+                      <label>FULL ADDRESS</label>
+                      <textarea id="caddress" class="form-control premium-input" rows="3" placeholder="Street, City, Country..."></textarea>
+                    </div>
+                  </div>
+                </div>
+                <button class="premium-btn w-100 mt-4" onclick="nextStep(2)">
+                  Continue to Payment <i class="fa-solid fa-arrow-right ms-2"></i>
+                </button>
+              </div>
+
+              <div id="step-2" class="checkout-step d-none">
+                <h4 class="mb-4 text-white">Payment Method</h4>
+                <div class="p-3 border border-secondary rounded mb-3 bg-dark hover-gold" style="cursor: pointer;">
+                  <input type="radio" name="pay" id="cod" checked> 
+                  <label for="cod" class="ms-2">Cash on Delivery</label>
+                </div>
+                <div class="p-3 border border-secondary rounded mb-3 opacity-50">
+                  <input type="radio" name="pay" id="card" disabled> 
+                  <label for="card" class="ms-2">Credit / Debit Card (Coming Soon)</label>
+                </div>
+                <div class="d-flex gap-3 mt-4">
+                  <button class="btn btn-outline-secondary w-50 py-3" onclick="nextStep(1)">BACK</button>
+                  <button class="premium-btn w-50" onclick="nextStep(3)">REVIEW ORDER</button>
+                </div>
+              </div>
+
+              <div id="step-3" class="checkout-step d-none">
+                <div class="text-center py-4 border border-secondary rounded bg-dark">
+                  <i class="fa-solid fa-receipt mb-3" style="font-size: 40px; color: #d4af37;"></i>
+                  <h4>Final Review</h4>
+                  <p class="text-muted px-4">Please confirm your items and total on the right before placing the order.</p>
+                </div>
+                <div class="d-flex gap-3 mt-4">
+                  <button class="btn btn-outline-secondary w-50 py-3" onclick="nextStep(2)">BACK</button>
+                  <button class="premium-btn w-50" onclick="placeOrder()">PLACE ORDER NOW</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5 mt-5 mt-lg-0">
+              <div class="summary-card p-4">
+                <h5 class="mb-4" style="color: #d4af37; letter-spacing: 2px;">YOUR ORDER</h5>
+                <div id="checkout-items-list" style="max-height: 400px; overflow-y: auto;">
+                   </div>
+                <hr style="border-color: #333;">
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                  <span class="text-muted">Total Amount</span>
+                  <span style="color: #d4af37; font-size: 24px; font-weight: 700;">$<span id="checkout-total-price">0</span></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- real time validation -->
+
+ <section class="contact-section">
+    <div class="container">
+        <div class="row align-items-center" data-aos="fade-right" data-aos-duration="1000">
+            <div class="col-lg-5 text-white p-4">
+                <h1 class="display-4 fw-bold gold-text" data-aos="fade-up" >Get In Touch</h1>
+                <p>Experience the essence of luxury. Reach out to us for bespoke perfume collections.</p>
+                <div class="mt-4">
+                    <p><i class="fas fa-map-marker-alt gold-text me-2"></i> 123 Luxury Lane, Karachi, Pakistan</p>
+                    <p><i class="fas fa-envelope gold-text me-2"></i> contact@scentora.com</p>
+                </div>
+            </div>
+
+            <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="glass-form-container">
+                    <h2 class="text-center gold-text mb-4" >Send Message</h2>
+                   <form id="luxuryContactForm">
+   <div class="row g-3" id="contactForm">
+    <div class="col-md-6">
+        <input type="text" class="form-control glass-input" id="c_name" placeholder="Enter Your Name" required minlength="3">
+        <div class="error-msg" id="name_err">Name must be at least 3 characters.</div>
+    </div>
+    <div class="col-md-6">
+        <input type="email" class="form-control glass-input" id="c_email" placeholder="Enter Email Address" required>
+        <div class="error-msg" id="email_err">Please enter a valid email address.</div>
+    </div>
+    <div class="col-12">
+        <input type="text" class="form-control glass-input" id="c_subject" placeholder="Subject">
+    </div>
+    <div class="col-12">
+        <textarea class="form-control glass-input" id="c_message" rows="4" placeholder="Your Message" required></textarea>
+        <div class="error-msg" id="msg_err">Message cannot be empty.</div>
+    </div>
+    <div class="col-12 text-center">
+        <button type="submit" id="submitBtn" class="btn btn-gold w-100 fw-bold">SUBMIT NOW</button>
+    </div>
+</div>
+
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="faq-section py-5" style="background-color: #000000;">
+    <div class="container">
+
+    
+
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h6 style="color: #d4af37; letter-spacing: 4px; font-weight: 300;">ASSISTANCE</h6>
+            <h2 class="text-white fw-bold" style="letter-spacing: 2px;">FREQUENTLY ASKED QUESTIONS</h2>
+            <div style="width: 50px; height: 2px; background: #d4af37; margin: 15px auto;"></div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="accordion accordion-flush premium-faq" id="faqAccordion">
+                    
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                                <span class="gold-num me-3">01.</span> How should I store my luxury perfume?
+                            </button>
+                        </h2>
+                        <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                To preserve the essence, store your bottle in a cool, dark place away from direct sunlight and humidity. Our luxury boxes are designed specifically for this purpose.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                                <span class="gold-num me-3">02.</span> Are your fragrances authentic?
+                            </button>
+                        </h2>
+                        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Absolutely. We only curate 100% authentic luxury fragrances sourced directly from the original perfume houses in France and Italy.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+                                <span class="gold-num me-3">03.</span> What is the average shipping time?
+                            </button>
+                        </h2>
+                        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Standard luxury shipping takes 3-5 business days. You will receive a tracking number via email once your essence has been dispatched.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <div class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.313992521698!2d67.0681!3d24.8719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDUyJzE4LjgiTiA2N8KwMDQnMDYuMSJF!5e0!3m2!1sen!2s!4v1647100000000" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+
+
+    
+<div id="sales-notification" class="sales-popup hidden">
+    <div class="popup-content">
+        <img id="popup-img" src="images/logo.png" alt="Perfume">
+        <div class="popup-text">
+            <p id="popup-msg"></p>
+            <small id="popup-time"></small>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- footer -->
+
+<footer class="premium-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="footer-logo">
+                    <img src="images/logo1.png" alt="Scentora" class="footer-logo-img">
+                    <span class="brand-name" style="font-family: 'Playfair Display', serif;">SCENTORA</span>
+                </div>
+                <p class="footer-desc" style="font-family: 'Playfair Display', serif;">Crafting timeless scents that linger in memory. Redefining luxury, one drop at a time.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="collection.html">Collection</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="footer-heading">Collections</h5>
+                       <ul class="footer-links">
+                    <li><a href="collection.html#chanelradio">CHANEL</a></li>
+                    <li><a href="collection.html#diorradio">DIOR</a></li>
+                    <li><a href="collection.html#calvinradio">CALVIN KLEIN</a></li>
+                    <li><a href="collection.html#victoriaradio">VICTORIA</a></li>
+                    <li><a href="collection.html#celineradio">CELINE</a></li>
+                    <li><a href="collection.html#gucciradio">GUCCI</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5 class="footer-heading">Subscribe</h5>
+                <p class="footer-desc" style="font-family: 'Playfair Display', serif;">Join our elite circle for exclusive launches.</p>
+              <div class="newsletter-form">
+                <input type="email" id="newsletter-email" placeholder="Email Address">
+                  <button type="button" onclick="handleJoin()">JOIN</button>
+                   </div>
+                   <!-- Added Email Link Below -->
+    <div class="footer-email-contact">
+        <i class="fas fa-envelope me-2"></i>
+        <a href="mailto:contact@scentora.com">contact@scentora.com</a>
+    </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 SCENTORA. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+        </div>
+    </div>
+</footer>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+   document.getElementById('luxuryContactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Humne yahan IDs update kar di hain (c_ prefix ke saath)
+    const name = document.getElementById('c_name').value.trim();
+    const email = document.getElementById('c_email').value.trim();
+    const message = document.getElementById('c_message').value.trim();
+
+    if (name !== "" && email !== "" && message !== "") {
+        // Success Popup
+        Swal.fire({
+            title: 'Message Sent!',
+            text: 'Your request has been received. We will contact you soon.',
+            icon: 'success',
+            background: '#1a1a1a',
+            color: '#D4AF37',
+            confirmButtonColor: '#D4AF37',
+            iconColor: '#D4AF37'
+        });
+
+        this.reset(); // Form reset
+    } else {
+        // Error Popup
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please fill all required fields.',
+            icon: 'error',
+            confirmButtonColor: '#000'
+        });
+    }
+});
+//   navbar
+
+
+
+  $(document).ready(function() {
+    // Navbar background change on scroll
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) {
+            $('.navbar').addClass('scrolled shadow-sm');
+        } else {
+            $('.navbar').removeClass('scrolled shadow-sm');
+        }
+    });
+
+    // Smooth subtle parallax effect for the large background text
+   $(window).on('scroll', function() {
+    var scroll = $(window).scrollTop();
+    $('.hero-title').css({
+        // Yahan se -50% hata diya, sirf vertical movement rakhi hai
+        'transform': 'translateY(' + (scroll * 0.1) + 'px)' 
+    });
+});
+});
+
+$(document).ready(function(){
+    $(".hero-title").fadeIn(3000); // 2000ms = 2 seconds
+});
+
+$(document).ready(function(){
+    $(".navbar").fadeIn(3000); // 2000ms = 2 seconds
+});
+
+$(document).ready(function(){
+    $("#button").fadeIn(3000); // 2000ms = 2 seconds
+});
+
+$(document).ready(function(){
+    $(".hero-subtitle ").fadeIn(3000); // 2000ms = 2 seconds
+});
+
+
+// signin
+
+
+
+
+$(document).ready(function() {
+    $('#signInBtn').on('click', function() {
+        // Show golden message with a slide effect
+        $('#loginMsg').slideDown();
+
+        // Optional: Modal ko 2 second baad band karna ho to:
+        
+        setTimeout(function(){
+            $('#exampleModal').modal('hide');
+            $('#loginMsg').hide();
+        }, 3000);
+        
+    });
+
+    // Reset message when modal is closed
+    $('#exampleModal').on('hidden.bs.modal', function () {
+        $('#loginMsg').hide();
+    });
+});
+
+
+
+$(document).ready(function() {
+    $('#signInBtn').on('click', function() {
+        let email = $('#email').val().trim();
+        let password = $('#password').val().trim();
+        let isValid = true;
+
+        // Reset previous states
+        $('.dark-input').removeClass('is-invalid');
+        $('.error-text').hide();
+        $('#loginMsg').hide();
+
+        // Email Validation
+        if (email === "" || !email.includes('@')) {
+            $('#email').addClass('is-invalid');
+            $('#emailError').fadeIn();
+            isValid = false;
+        }
+
+        // Password Validation (at least 6 characters)
+        if (password.length < 6) {
+            $('#password').addClass('is-invalid');
+            $('#passError').fadeIn();
+            isValid = false;
+        }
+
+        // Final Check
+        if (isValid) {
+            $(this).html('<i class="fas fa-spinner fa-spin"></i> Processing...'); // Spinner effect
+            $(this).prop('disabled', true); // Disable button to prevent double clicks
+
+            setTimeout(function() {
+                $('#loginMsg').fadeIn();
+                $('#signInBtn').html('Sign In').prop('disabled', false);
+                
+                // Modal ko band karne ke liye (Optional)
+                
+            }, 1500);
+        }
+    });
+
+    // Inputs par click karne se error hat jaye
+    $('.dark-input').on('input', function() {
+        $(this).removeClass('is-invalid');
+        $(this).next('.error-text').fadeOut();
+    });
+});
+
+
+
+
+
+
+
+
+// Checkout Modal
+$(document).ready(function() {
+    // 1. Load Cart from LocalStorage (Refresh hone par data save rahega)
+    let cart = JSON.parse(localStorage.getItem('user_cart')) || [];
+
+    // Initial update on page load (Badge aur list dikhane ke liye)
+    updateCartLayout();
+
+    // Helper Function: Cart ko browser memory mein save karne ke liye
+    function saveCartToStorage() {
+        localStorage.setItem('user_cart', JSON.stringify(cart));
+    }
+
+    // 2. Buy Now Click Event
+   $(document).on('click', '.buy-now', function(e) {
+        e.preventDefault();
+        
+        let itemName = $(this).attr('data-name'); 
+        let itemPrice = $(this).attr('data-price');
+        let itemImg = "";
+
+        // Check karein ke click card par hua hai ya modal mein
+        if ($(this).closest('.modal').length > 0) {
+            // Agar click Modal ke andar hua hai
+            itemImg = $(this).closest('.modal').find('.carousel-item.active img').attr('src');
+        } else {
+            // Agar click Card par hua hai
+            let bgImg = $(this).closest('.col-6, .col-md-3').find('.img-front').css('background-image');
+            itemImg = bgImg ? bgImg.replace('url(','').replace(')','').replace(/\"/gi, "") : "";
+        }
+
+        if (itemName && itemPrice) {
+            cart.push({ 
+                name: itemName, 
+                price: parseFloat(itemPrice),
+                img: itemImg
+            });
+            
+            saveCartToStorage();
+            updateCartLayout();
+            
+            // Button Feedback
+            let btn = $(this);
+            let originalText = btn.text();
+            btn.text("Added!").css("border-color", "#d4af37");
+            setTimeout(() => btn.text(originalText).css("border-color", "#333"), 800);
+        }
+    });
+
+    // 3. Remove Item from Cart
+    $(document).on('click', '.remove-item', function() {
+        let index = $(this).data('index');
+        cart.splice(index, 1);
+        
+        saveCartToStorage(); // Save updated cart
+        updateCartLayout();
+        renderCheckoutSummary(); 
+    });
+
+    // 4. Update UI (Badge, List, Total)
+    function updateCartLayout() {
+        let html = '';
+        let total = 0;
+        $('#cart-count').text(cart.length); // Update Badge count
+
+        if (cart.length === 0) {
+            html = '<p class="text-center text-muted py-3">Your cart is empty.</p>';
+        } else {
+            cart.forEach((item, index) => {
+                html += `
+                <div class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
+                    <div class="d-flex align-items-center">
+                        <img src="${item.img}" style="width:50px; height:50px; object-fit:cover; border-radius:5px; margin-right:12px; border: 1px solid #333;">
+                        <div>
+                            <span class="text-white d-block" style="font-size:14px;">${item.name}</span>
+                            <span style="color: #d4af37; font-size: 13px;">$${item.price.toFixed(2)}</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-sm remove-item" data-index="${index}" style="color: #ff4d4d;">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>`;
+                total += item.price;
+            });
+        }
+        $('#cart-items-list').html(html);
+        $('#total-price').text(total.toFixed(2));
+    }
+
+    // 5. Render Checkout Summary
+    function renderCheckoutSummary() {
+        let html = '';
+        let total = 0;
+
+        if (cart.length === 0) {
+            html = '<p class="text-center text-muted">No items to checkout.</p>';
+        } else {
+            cart.forEach(item => {
+                html += `
+                <div class="d-flex align-items-center mb-4">
+                    <img src="${item.img}" style="width:70px; height:70px; border-radius:8px; object-fit:cover; border: 1px solid #d4af37;">
+                    <div class="flex-grow-1 ms-3">
+                        <div class="fw-bold text-white" style="letter-spacing: 1px; font-size: 15px;">${item.name.toUpperCase()}</div>
+                        <div style="color: #d4af37; font-size: 14px;">$${item.price.toFixed(2)}</div>
+                    </div>
+                </div>`;
+                total += item.price;
+            });
+        }
+        $('#checkout-items-list').html(html);
+        $('#checkout-total-price').text(total.toFixed(2));
+    }
+
+    // 6. Global Window Functions
+    window.openCheckoutModal = function() {
+        if(cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+        renderCheckoutSummary();
+        $('#mymodal').modal('hide'); 
+        $('#checkoutModal').modal('show'); 
+    }
+
+    window.placeOrder = function() {
+        $('#order-success').css('display', 'flex').hide().fadeIn(500);
+        cart = []; 
+        saveCartToStorage(); // Clear localStorage on order
+        updateCartLayout();
+    };
+
+    // --- Validation & Steps Logic ---
+    function validateStep1() {
+        let isValid = true;
+        $('.error-msg').remove(); 
+        $('.premium-input').removeClass('is-invalid');
+
+        if ($('#fname').val().trim() === "") {
+            $('#fname').addClass('is-invalid').after('<span class="error-msg">Required</span>');
+            isValid = false;
+        }
+        if ($('#cemail').val().trim() === "" || !$('#cemail').val().includes('@')) {
+            $('#cemail').addClass('is-invalid').after('<span class="error-msg">Invalid Email</span>');
+            isValid = false;
+        }
+        if ($('#caddress').val().trim() === "") {
+            $('#caddress').addClass('is-invalid').after('<span class="error-msg">Address Required</span>');
+            isValid = false;
+        }
+        return isValid;
+    }
+
+    window.nextStep = function(step) {
+        if (step === 2 && !validateStep1()) return; 
+
+        $('.checkout-step').addClass('d-none');
+        $(`#step-${step}`).removeClass('d-none');
+        $('.step-item').removeClass('active');
+        $(`#step-${step}-label`).addClass('active');
+    };
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const luxuryForm = document.getElementById('luxuryContactForm');
+    const inputs = luxuryForm.querySelectorAll('.glass-input[required]');
+
+    // 1. Real-time Validation function
+    function validateField(input) {
+        // Map input IDs to their specific error message divs
+        const errorMapping = {
+            'c_name': 'name_err',
+            'c_email': 'email_err',
+            'c_message': 'msg_err'
+        };
+        
+        const errorDiv = document.getElementById(errorMapping[input.id]);
+
+        if (input.checkValidity()) {
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+            if (errorDiv) errorDiv.style.display = 'none';
+        } else {
+            input.classList.remove('is-valid');
+            input.classList.add('is-invalid');
+            if (errorDiv) errorDiv.style.display = 'block';
+        }
+    }
+
+    // 2. Add listeners to each input
+    inputs.forEach(input => {
+        input.addEventListener('input', () => validateField(input));
+        input.addEventListener('blur', () => validateField(input));
+    });
+
+    // 3. Handle Form Submission
+    luxuryForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        let isFormValid = true;
+
+        // Final validation check for all fields
+        inputs.forEach(input => {
+            validateField(input);
+            if (!input.checkValidity()) {
+                isFormValid = false;
+            }
+        });
+
+        if (isFormValid) {
+            // Success Popup
+            Swal.fire({
+                title: 'Message Sent!',
+                text: 'Your request has been received. We will contact you soon.',
+                icon: 'success',
+                background: '#1a1a1a',
+                color: '#D4AF37',
+                confirmButtonColor: '#D4AF37',
+                iconColor: '#D4AF37'
+            });
+
+            this.reset();
+            // Remove validation classes after reset
+            inputs.forEach(input => input.classList.remove('is-valid', 'is-invalid'));
+            
+        } else {
+            // Error Popup
+            Swal.fire({
+                title: 'Error!',
+                text: 'Please correct the highlighted fields.',
+                icon: 'error',
+                background: '#1a1a1a',
+                color: '#fff',
+                confirmButtonColor: '#ff4d4d'
+            });
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// wishlist
+// wishlist logic with LocalStorage
+$(document).ready(function() {
+    // 1. Load Wishlist from LocalStorage on Page Load
+    let savedWishlist = localStorage.getItem('userWishlist');
+    let wishlist = savedWishlist ? JSON.parse(savedWishlist) : [];
+
+    // Pehli baar UI load karne ke liye
+    updateAllUI();
+
+    // 2. Wishlist Button Toggle (Card par click)
+    $(document).on('click', '.heart-btn', function(e) {
+        e.preventDefault();
+        let name = $(this).attr('data-name');
+        let index = wishlist.indexOf(name);
+
+        if (index === -1) {
+            wishlist.push(name);
+            $(this).addClass('active').css('color', '#ff0000');
+        } else {
+            wishlist.splice(index, 1);
+            $(this).removeClass('active').css('color', '');
+        }
+        
+        saveAndRefresh(); // Save to LocalStorage
+    });
+
+    // 3. Modal ke andar se Remove button click
+    $(document).on('click', '.remove-wish', function() {
+        let name = $(this).attr('data-name');
+        
+        wishlist = wishlist.filter(item => item !== name);
+
+        // Card wale button ko wapis normal karne ke liye
+        $(`.heart-btn[data-name="${name}"]`).removeClass('active').css('color', '');
+
+        saveAndRefresh(); // Save to LocalStorage
+    });
+
+    // 4. Save to LocalStorage and Update UI
+    function saveAndRefresh() {
+        localStorage.setItem('userWishlist', JSON.stringify(wishlist));
+        updateAllUI();
+    }
+
+    // 5. UI Update Function
+    function updateAllUI() {
+        // Badge Update
+        $('#wishlist-count').text(wishlist.length);
+
+        // Card buttons ko highlight karne ke liye (jab page refresh ho)
+        $('.heart-btn').each(function() {
+            let btnName = $(this).attr('data-name');
+            if (wishlist.includes(btnName)) {
+                $(this).addClass('active').css('color', '#ff0000');
+            } else {
+                $(this).removeClass('active').css('color', '');
+            }
+        });
+
+        let html = '';
+        if (wishlist.length === 0) {
+            html = '<p class="text-center text-muted py-3">Wishlist is empty</p>';
+        } else {
+            wishlist.forEach((item) => {
+                html += `
+                <div class="d-flex justify-content-between align-items-center py-2 border-bottom border-secondary">
+                    <span class="text-white">${item}</span>
+                    <button class="btn btn-sm text-danger remove-wish" data-name="${item}">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>`;
+            });
+        }
+        $('#wishlist-items-list').html(html);
+    }
+});
+
+
+// Social Proof Popup js
+
+
+const notifications = [
+    { name: "Anam from Karachi", product: "Scentora Gold", time: "2 mins ago" },
+    { name: "Zain from Lahore", product: "Midnight Oud", time: "5 mins ago" },
+    { name: "Sara from Islamabad", product: "Royal Rose", time: "just now" },
+    { name: "Hamza from Dubai", product: "Scentora Classic", time: "10 mins ago"},
+    { name: "Sadia from multan", product: "Ck perfume", time: "8 mins ago"},
+    { name: "Arsalan from Qatar", product: "Chenal Coco", time: "5 mins ago"},
+];
+
+const popup = document.getElementById('sales-notification');
+const msg = document.getElementById('popup-msg');
+const time = document.getElementById('popup-time');
+
+function showNotification() {
+    // Random data pick karein
+    const randomIdx = Math.floor(Math.random() * notifications.length);
+    const data = notifications[randomIdx];
+
+    // Data set karein
+    msg.innerHTML = `<strong>${data.name}</strong> just bought <strong>${data.product}</strong>`;
+    time.innerText = data.time;
+
+    // Show popup
+    popup.classList.remove('hidden');
+
+    // 5 seconds baad hide kar dein
+    setTimeout(() => {
+        popup.classList.add('hidden');
+    }, 5000);
+}
+
+// Har 12 seconds baad naya notification dikhayein
+setInterval(showNotification, 12000);
+
+// Pehla notification 3 seconds baad aaye ga
+setTimeout(showNotification, 3000);
+
+
+// sweetalert footer
+function handleJoin() {
+    const emailInput = document.getElementById('newsletter-email');
+    
+    if (emailInput.value.trim() !== "") {
+        Swal.fire({
+            title: 'Welcome to Scentora!',
+            text: 'You have successfully joined our exclusive newsletter.',
+            icon: 'success',
+            background: '#111', // Black background
+            color: '#D4AF37',   // Gold text
+            confirmButtonColor: '#D4AF37',
+            confirmButtonText: 'Great!'
+        });
+        emailInput.value = "";
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please enter your email first.',
+            background: '#111',
+            color: '#fff',
+            confirmButtonColor: '#D4AF37'
+        });
+    }
+}
+
+
+
+
+
+
+// animation
+
+$(document).ready(function() {
+    // 1. Contact Text Floating Animation Apply
+    $('.col-lg-5.text-white').addClass('contact-info-animate');
+
+    // 2. Sign In Logic (Fixed: No auto-show)
+    $('#signInBtn').off('click').on('click', function() {
+        let email = $('#email').val().trim();
+        let password = $('#password').val().trim();
+        
+        if (email !== "" && password.length >= 6) {
+            $(this).html('<i class="fas fa-spinner fa-spin"></i>').prop('disabled', true);
+            
+            setTimeout(() => {
+                $('#exampleModal').modal('hide');
+                $(this).html('Sign In').prop('disabled', false);
+                
+                Swal.fire({
+                    title: 'Welcome Back!',
+                    text: 'Access Granted to Scentora.',
+                    icon: 'success',
+                    background: '#1a1a1a',
+                    color: '#f5e6c8',
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            }, 1000);
+        } else {
+            $('.dark-input').addClass('is-invalid');
+            $('.error-text').fadeIn();
+        }
+    });
+
+    // 3. Contact Form Submission
+    $('#luxuryContactForm').off('submit').on('submit', function(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Message Sent!',
+            text: 'Our experts will reach out to you.',
+            icon: 'success',
+            background: '#1a1a1a',
+            color: '#D4AF37',
+            confirmButtonColor: '#D4AF37'
+        });
+        this.reset();
+    });
+
+    // 4. Navbar Scroll Effect
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) {
+            $('.navbar').addClass('scrolled shadow-sm');
+        } else {
+            $('.navbar').removeClass('scrolled shadow-sm');
+        }
+    });
+});
+
+
+    </script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>

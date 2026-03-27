@@ -1,0 +1,1512 @@
+ :root {
+    --gold: #fcd041;
+    --dark-bg: #0a0a0a;
+    --text-light: #f4f4f4;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+    padding: 20px 0;
+    z-index: 1000;
+    display: none;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #f5e6c8;
+}
+
+.nav-link {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #f5e6c8;
+    
+}
+
+
+/* Navbar ke img  */
+.navbar img {
+  height: 40px; 
+  width: auto; 
+  margin-right: 10px; 
+  vertical-align: middle; 
+}
+
+
+.navbar-brand.logo {
+  font-weight: bold;
+  font-size: 1.5rem; 
+  color: #D4AF37 !important; 
+}
+
+
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/heroo.png') center/cover no-repeat;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 10vw; 
+    color: rgba(255, 209, 57, 0.865); 
+    display: none; 
+    z-index: 2;
+    margin-bottom: 20px;
+    width: 100%; 
+    cursor:pointer;
+   
+
+}
+
+
+
+.hero-subtitle {
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    display: none;
+    cursor: pointer;
+
+}
+.hero-section a{
+    background-color: rgba(255, 205, 42, 0.902);
+    color: rgb(0, 0, 0);
+    border: none;
+    display: none;
+}
+.hero-section a:hover{
+   background-color: #d4af37;
+    color: white;
+    padding: 10px 20px;
+    
+    border-radius: 5px;
+    box-shadow: 0 0 15px 5px #d4af37;
+    
+    
+}
+#icons a i{
+    color:  #f5e6c8;
+    transition: opacity 0.5s ease;
+}
+#icons a i:hover{
+    transform: translateY(-1px);
+}
+
+
+
+
+        
+/* Base Section with Black Background */
+        #about {
+            background: #000000;
+            padding: 0px 0;
+            min-height: auto;
+        }
+
+        .product-card {
+            padding: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            position: relative;
+        } 
+
+        /* FIX: Image Container  */
+        .hover-img {
+            position: relative;
+            height: 320px; 
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .a-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Hover Effect: Front se Back image swap */
+        .img-back {
+            opacity: 0;
+        }
+
+        .hover-img:hover .img-back {
+            opacity: 1;
+        }
+
+        .hover-img:hover .img-front {
+            opacity: 0;
+        }
+
+        /* Glassmorphism Info Section Fix */
+        .card-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 15px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 5;
+              margin-top: -60px;
+
+            opacity: 0; 
+            transform: translateY(20px); 
+             transition: all 0.4s ease-in-out;
+             pointer-events: none; 
+        }
+
+        /* 2. Hover State */
+        .col-6:hover .card-info {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+       .card-info h3 { 
+  color: #0c0000;
+  margin: 0; 
+  font-size: 18px;
+  font-weight: bold;
+ }
+
+.card-info p { 
+  color: #c1c0c0; 
+  margin: 5px 0 0; 
+  font-size: 13px;
+ }
+        .heart-btn {
+            background: white; 
+            border: none; 
+            width: 35px; 
+            height: 35px;
+            border-radius: 50%; 
+            color: #c60b02; 
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* Bottom Buttons */
+        .card-actions {
+            display: flex; 
+            gap: 10px; 
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+
+        .buy-now {
+            flex: 2; 
+            border: none;
+            height: 45px;
+            border-radius: 10px; 
+            cursor: pointer;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background: linear-gradient(to right,#f7b93d, #fcf6b0, #f3c666 , #fff8a5, #fabe56 );
+            color: #000;
+            font-weight: bold;
+            transition: transform 0.2s;
+            
+        }
+
+        .buy-now:hover {
+            transform: scale(1.02);
+        }
+
+        .price {
+            flex: 1; 
+            height: 45px;
+            border-radius: 10px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold; 
+            border: 1px solid #444;
+            background: linear-gradient(to right, #c0c0c0 0%, #E8E8E8 50%, #c0c0c0 100%);
+            color: #333;
+            filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.5));
+        }
+
+
+
+.product-about h1, h3, p{
+  color: #f5e6c8;
+  font-family: 'Playfair Display', serif;
+
+}
+
+
+
+/* Modal Background */
+.custom-dark-modal {
+    background-color: #121212 !important;
+    border: 1px solid #333;
+    border-radius: 15px;
+    color: white;
+}
+
+.gold-text {
+    color: #d4af37;
+    font-size: 14px;
+}
+
+/* Input Styles */
+.dark-input {
+    background-color: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    color: white !important;
+    padding: 12px;
+}
+
+/* Hover effect on Text Areas/Inputs */
+.dark-input:hover, .dark-input:focus {
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4) !important;
+    outline: none;
+}
+
+/* Sign In Button: Dark with Golden Hover */
+.btn-dark-gold {
+    background-color: #000 !important;
+    color: #d4af37 !important;
+    border: 1px solid #333 !important;
+    padding: 10px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+
+
+.btn-dark-gold:hover {
+    border-color: #d4af37 !important;
+    background-color: #121212 !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+    
+
+
+.error-text {
+    color: #ff4d4d; 
+    font-size: 12px;
+    display: none; 
+    margin-top: 5px;
+}
+
+
+.is-invalid {
+    border-color: #ff4d4d !important;
+    box-shadow: 0 0 8px rgba(255, 77, 77, 0.3) !important;
+}
+
+
+/* Placeholder color adjust karne ke liye */
+.dark-input::placeholder {
+    color: #666 !important; 
+    opacity: 1; 
+}
+
+/* Firefox ke liye */
+.dark-input:-ms-input-placeholder {
+    color: #666 !important;
+}
+
+/* Internet Explorer ke liye */
+.dark-input::-ms-input-placeholder {
+    color: #666 !important;
+}
+
+
+.dark-input:hover::placeholder {
+    color: #888 !important;
+    transition: 0.3s;
+}
+
+.modal-title{
+  color: #f5e6c8;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+
+}
+
+
+
+.cart-badge-style {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #d4af37;
+    color: black;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+}
+
+/* Modal Styling (Wohi jo pehle thi) */
+.custom-dark-modal {
+    background-color: #121212 !important;
+    border: 1px solid #d4af37;
+    color: white;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.remove-item {
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 2px 8px;
+}
+
+.remove-item:hover {
+    background-color: #d4af37 !important;
+    color: white !important;
+    border-color: #d4af37 !important;
+    transform: scale(1.1);
+}
+
+/* collection dropdown */
+
+/* Dropdown Box Styling */
+.custom-dropdown {
+    background-color: #121212 !important; 
+    border: 1px solid #d4af37 !important; 
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Dropdown Items (Links) */
+.custom-dropdown .dropdown-item {
+    color: #fff !important;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect on Items */
+.custom-dropdown .dropdown-item:hover {
+    background-color: #1a1a1a !important;
+    color: #d4af37 !important; 
+    padding-left: 25px; 
+}
+
+/* Divider Line */
+.dropdown-divider {
+    border-top: 1px solid #333;
+}
+
+/* Dropdown Arrow Color */
+.dropdown-toggle::after {
+    color: #d4af37;
+}
+
+
+/* whishlist */
+
+/* Wishlist Badge */
+.wishlist-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #d4af37; 
+    color: white;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+}
+
+/* Red-Gold Border for Wishlist */
+.border-heart {
+    border: 1px solid #d4af37 !important;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.2);
+}
+
+.wish-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #333;
+}
+
+
+
+
+.heart-btn {
+   
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    border: none; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover par golden outline bina blur ke */
+.heart-btn:hover {
+    border: 1px solid #d4af37 !important;
+    transform: scale(1.05);
+    box-shadow: none !important; 
+}
+
+
+.heart-btn.active {
+    color: #ff0000;
+}
+
+
+/* headline */
+.announcement-bar {
+    background: #000; 
+    color: #d4af37; 
+    padding: 10px 0;
+    overflow: hidden;
+    border-top: 1px solid #d4af377c;
+    border-bottom: 1px solid #d4af3773;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.marquee-content {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-content span {
+    padding: 0 40px;
+    display: inline-block;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Hover par animation slow karne ke liye */
+.announcement-bar:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+
+/* categories */
+
+body {
+    background-color: black; 
+    color: white;
+}
+
+.brand-card {
+    height: 450px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent; 
+}
+
+/* Golden Glow on Hover */
+.brand-card:hover {
+    transform: translateY(-5px);
+    border: 2px solid #d4af37; 
+    box-shadow: 0 0 20px rgb(212, 175, 55); 
+}
+
+/* Glassmorphism Effect */
+.glass-content {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px 10px;
+    width: 100%;
+}
+
+.brand-name {
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    color: rgba(212, 175, 55, 0.849); 
+
+}
+
+.brand-tagline {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+/* Luxury Button Styling */
+.btn-luxury {
+    text-decoration: none;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.btn-luxury:hover {
+    background-color: #d4af37;
+    color: black;
+    box-shadow: 0 0 10px #d4af37;
+}
+
+
+
+
+/* Mobile Adjustments */
+@media (max-width: 576px) {
+    .brand-card {
+        height: 320px;
+    }
+    .brand-name {
+        font-size: 1.1rem;
+    }
+}
+.about{
+    color:#f5e6c8;
+    font-family: 'Playfair Display', serif;
+}
+.about a{
+    border: 1px solid #f5e6c8;
+}
+.about a:hover{
+    background-color: #d4af37;
+    border: none;
+}
+
+/* review */
+
+
+.testimonial-slider {
+  overflow: hidden;
+  width: 100%;
+  background: #000;
+  padding: 40px 0;
+  position: relative;
+}
+.scroll-track {
+  display: flex;
+  width: max-content;
+  /* 'linear' lagane se speed hamesha ek jaisi rahegi */
+  animation: scrollRight 20s linear infinite; 
+}
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Jitne cards hain unke adhay (50%) tak move karein */
+    transform: translateX(-50%); 
+  }
+}
+
+.card {
+  background: #000000;
+  border: 1px solid #d4af37;
+  border-radius: 15px;
+  width: 280px;
+  
+  padding: 25px 20px 75px 20px; 
+  margin: 0 15px;
+  color: white;
+  text-align: center;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+.stars {
+  color: #ffcc00;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #ccc;
+  flex-grow: 1;
+}
+.author {
+  display: block;
+  font-size: 0.9em;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10px; 
+  position: relative;
+  z-index: 2;
+}
+
+.perfume-img-wrapper {
+  position: absolute;
+  bottom: 0px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding-bottom: 10px; 
+}
+
+/* The actual small image */
+.perfume-img-wrapper img {
+  width: 70px; 
+  height: auto;
+  opacity: 0.8; 
+}
+
+/* Scroll Animation  */
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+
+
+
+ /* Social Proof Popup */
+
+
+ .sales-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #111; 
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #D4AF37; 
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    z-index: 9999;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sales-popup.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.popup-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#popup-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    background: #000;
+}
+
+.popup-text p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.popup-text small {
+    color: #D4AF37;
+    font-size: 0.75rem;
+}
+
+
+
+
+
+
+
+/* counter */
+
+.counter-section {
+    padding: 60px 0;
+    background-color: #000000; /* Pure Black background */
+}
+
+.counter-card {
+    background: rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(224, 178, 28, 0.808);
+    border-radius: 20px;
+    padding: 30px 20px;
+    transition: 0.4s ease;
+}
+
+.counter-card:hover {
+    border-color: #D4AF37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    transform: translateY(-10px);
+}
+
+.counter-icon {
+    font-size: 2.5rem;
+    color: #D4AF37;
+    margin-bottom: 15px;
+}
+
+.counter-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.counter-text {
+    color: #888;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* Gold Gradient Text for Numbers */
+.counter-value {
+    background: linear-gradient(to right, #D4AF37, #f5e6c8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* aboutpefume tilt */
+
+.tilt-img {
+    transition: transform 0.2s ease-out, box-shadow 0.3s ease, filter 0.3s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.tilt-img:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), 0 0 60px rgba(184, 134, 11, 0.2);
+    filter: brightness(1.05) contrast(1.1);
+}
+
+
+/* Newsletter Styles */
+.newsletter-form {
+    display: flex;
+    margin-top: 15px;
+    border-bottom: 1px solid #D4AF37;
+}
+
+.newsletter-form input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+
+.newsletter-form button {
+    background: transparent;
+    border: none;
+    color: #D4AF37;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    text-align: center;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+.footer-bottom a {
+    color: #555;
+    text-decoration: none;
+}
+
+/* Responsive adjust for mobile */
+@media (max-width: 768px) {
+    .premium-footer {
+        padding: 50px 0 20px 0;
+        text-align: center;
+    }
+    .footer-logo, .newsletter-form {
+        justify-content: center;
+    }
+}
+
+
+
+/* aosanimation */
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating-image {
+  animation: float 4s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+/* Cart Modal ke Checkout Now button Golden Glow */
+#mymodal .btn[onclick="openCheckoutModal()"] {
+    transition: all 0.4s ease-in-out;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+#mymodal .btn[onclick="openCheckoutModal()"]:hover {
+    background-color: #f1c40f !important; 
+    color: #000 !important;
+    transform: scale(1.05); 
+    
+    /* Strong Golden Glow Effect */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.7), 
+                0 0 30px rgba(212, 175, 55, 0.5), 
+                0 0 45px rgba(212, 175, 55, 0.3);
+    
+    letter-spacing: 1px; 
+}
+
+
+#mymodal .btn[onclick="openCheckoutModal()"]:active {
+    transform: scale(0.98); /* Click par dabne ka effect */
+}
+
+
+
+
+
+
+
+
+
+/* Checkout Modal Global Styling */
+#checkoutModal .modal-content {
+    background-color: #020202 !important; 
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+/* Container Spacing */
+.checkout-container {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* Step Progress Bar */
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+.step-item {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+    position: relative;
+    padding-bottom: 10px;
+}
+.step-item.active {
+    color: #fffffd;
+    border-bottom: 2px solid #d4af37;
+}
+
+/* Input Fields - Sophisticated Look */
+.checkout-input-group {
+    margin-bottom: 25px;
+}
+.checkout-input-group label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.premium-input {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #333 !important;
+    border-radius: 0 !important;
+    color: white !important;
+    padding: 10px 0 !important;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.premium-input:focus {
+    box-shadow: none !important;
+    border-bottom: 1px solid #d4af37 !important;
+}
+
+/* Order Summary Card */
+.summary-card {
+    background: #161616;
+    padding: 30px;
+    border: 1px solid #222;
+    border-radius: 4px;
+}
+.summary-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 1px solid #333;
+}
+
+/* Button */
+.premium-btn {
+    background: #d4af37;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    width: 100%;
+    margin-top: 20px;
+    transition: 0.4s;
+}
+.premium-btn:hover {
+    background: #f2d06b;
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+}
+
+
+
+
+
+.is-invalid {
+    border-bottom: 1px solid #ff4d4d !important;
+}
+.error-msg {
+    color: #ff4d4d;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Success Overlay */
+.order-success-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #0f0f0f;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.success-icon {
+    font-size: 60px;
+    color: #d4af37;
+    margin-bottom: 20px;
+    animation: scaleUp 0.5s ease-out;
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+
+/* Checkout Modal Header Styling */
+#checkoutModal .modal-header {
+    background-color: #080808ea !important; 
+    border-bottom: 1px solid rgba(212, 175, 55, 0.527) !important; 
+    padding: 20px 30px;
+}
+
+#checkoutModal .modal-title {
+    color: #d4af37 !important; 
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); 
+}
+
+
+#checkoutModal .btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.8;
+}
+
+/* cards models */
+/* model section */
+
+.my-custom-product-page {
+    width: 100%;
+    padding: 50px 5%;
+    background-color: #000000;
+    box-sizing: border-box;
+   border-radius: 30px;
+   box-shadow: 0 0 20px rgba(253, 174, 63, 0.973),
+              0 0 40px rgba(255, 189, 48, 0.927); 
+            margin-bottom: 50px;  
+            }
+
+.my-custom-product-page *, 
+.my-custom-product-page *:before, 
+.my-custom-product-page *:after {
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.product-layout-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    overflow: hidden;
+}
+
+/* Side Images */
+.side-thumbnails {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    gap: 10px;
+}
+
+.thumb-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #fcd65a;
+    cursor: pointer;
+    
+}
+
+/* Center Image */
+
+.main-display-image img {
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+    /* border-radius: 12px; */
+    box-shadow: 0 5px 15px rgba(75, 75, 75, 0.356);
+    border: 1px solid rgb(255, 209, 72)
+      
+
+}
+
+.carousel-item img{
+ height: 450px;
+  width: 100%;
+    transition: transform 0.3s ease-out; 
+    cursor: zoom-in;
+    object-fit: cover;
+   
+
+}
+
+
+
+.carousel-item:hover img {
+    transform: scale(1.7); 
+    cursor: pointer;
+    
+}
+
+/* Right Details */
+.product-info-panel {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-top: 3%;
+}
+
+.p-title { 
+  font-size: 32px;
+   margin-bottom: 10px; 
+  color: #e6e3e3f6;
+    font-weight: bold;
+    
+  }
+
+.p-price { 
+   font-size: 26px; 
+   margin-bottom: 20px;
+   background: linear-gradient(to right,#f7b93d, #fcf6b0, #f3c666 , #fff8a5, #fabe56 );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+.p-desc { 
+   line-height: 1.6; 
+   margin-bottom: 25px; 
+     color: #e6e3e3f6;
+    
+}
+
+/* Cart Section */
+.cart-controls { 
+  display: flex; 
+  gap: 15px;
+   justify-content: center;
+   margin-bottom: 20px;
+   }
+
+.qty-selector { 
+  border: 1px solid #b0afaf;
+   display: flex; 
+   border-radius: 50px;
+  
+   }
+
+.qty-selector button { 
+  padding: 10px 15px; 
+  border: none;
+   cursor: pointer;
+   border-radius: 50%;
+   font-weight: bold;
+   background: transparent;
+   color: #c1c0c0;
+   }
+
+   .qty-selector button:hover{
+    color: #b0afaf;
+   }
+
+.qty-selector input { 
+  width: 40px; 
+  text-align: center;
+   border: none; 
+   outline: none; 
+    background: linear-gradient(to right, #c0c0c0 0%, #E8E8E8 50%, #c0c0c0 100%);
+    font-weight: bold;
+
+  
+  }
+
+.btn-modal {
+      
+       background: linear-gradient(to right,#f7b93d, #fff697, #f3c666 , #fff696, #fabe56 );
+     color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-modal:hover { 
+  background-color: #9b3e00; 
+  color: #9b3f01;
+  
+}
+
+.extra-links{
+   color: #e6e3e3f6;
+}
+
+.p-meta { 
+  border-top: 1px solid #eee; 
+  padding-top: 20px; 
+  font-size: 14px; 
+     color: #e6e3e3f6;
+
+ }
+
+ #price-list{
+  background-color: #0c0000;
+  color: #E8E8E8;
+  border: none;
+ }
+
+  .btn-close {
+    filter: invert(80%) sepia(50%) saturate(3000%) hue-rotate(10deg) brightness(105%) contrast(105%);
+    opacity: 1; 
+}
+  
+/* responsive model */
+@media (max-width: 900px) {
+    .product-layout-container { flex-direction: column; align-items: center; }
+    .side-thumbnails { flex-direction: row; order: 2; }
+    .main-display-image { order: 1; }
+    .product-info-panel { order: 3; text-align: center; }
+}
+
+
+
+
+
+.extra-links {
+    position: relative; 
+    z-index: 9999 !important;
+}
+
+.extra-links a {
+    cursor: pointer !important;
+    display: inline-block;
+}
+.extra-links a {
+    pointer-events: auto !important;
+}
+
+.social-icon {
+    color: #d4af37; 
+    transition: all 0.3s ease;
+    text-decoration: none;
+    
+  
+    
+}
+
+.social-icon:hover {
+    color: #fff; 
+    transform: translateY(-3px); 
+}
+
+/* footer email link */
+email footer .footer-email-contact {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #888; 
+}
+
+.footer-email-contact i {
+    color: #D4AF37; 
+}
+
+.footer-email-contact a {
+    color: #888;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-email-contact a:hover {
+    color: #D4AF37;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
+}
+
+/* Mobile alignment fix */
+@media (max-width: 768px) {
+    .footer-email-contact {
+        justify-content: center;
+    }
+}
+
+/* footer */
+
+.premium-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 80px 0 30px 0;
+    border-top: 1px solid #333;
+   font-family: 'Poppins', sans-serif;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    color: #D4AF37;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.footer-desc {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-heading {
+    color: #D4AF37;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #D4AF37;
+    padding-left: 5px;
+}
+
+.social-links a {
+    color: #D4AF37;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Newsletter Styles */
+.newsletter-form {
+    display: flex;
+    margin-top: 15px;
+    border-bottom: 1px solid #D4AF37;
+}
+
+.newsletter-form input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+
+.newsletter-form button {
+    background: transparent;
+    border: none;
+    color: #D4AF37;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    text-align: center;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+.footer-bottom a {
+    color: #555;
+    text-decoration: none;
+}
+
+/* Responsive adjust for mobile */
+@media (max-width: 768px) {
+    .premium-footer {
+        padding: 50px 0 20px 0;
+        text-align: center;
+    }
+    .footer-logo, .newsletter-form {
+        justify-content: center;
+    }
+}
+
+/* Footer Social Icons Pulse */
+.social-links a i {
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover i {
+    color: #D4AF37;
+    transform: scale(1.3) rotate(10deg);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
