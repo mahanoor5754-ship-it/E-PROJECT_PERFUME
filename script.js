@@ -105,7 +105,7 @@ function saveProductToWord(btn) {
     
     let content = `
         <div style="text-align: center;">
-            <h1 style="color: #d4af37; margin-bottom: 0;">OPULANCE</h1>
+            <h1 style="color: #d4af37; margin-bottom: 0;">Scentora</h1>
             <p style="font-size: 10pt; color: #666;">Luxury Perfume Collection House</p>
         </div>
         <hr style="border: 1px solid #d4af37;">
